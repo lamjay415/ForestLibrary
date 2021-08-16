@@ -8,15 +8,15 @@ module.exports = function validateLoginInput(data) {
     data.password = validText(data.password) ? data.password : ''
 
     if(!Validator.isAlphanumeric(data.username)){
-        errors.username = "Username is invalid"
+        errors.username = "Username is invalid";
     }
 
      if(!Validator.isEmpty(data.username)){
-        errors.username = "Username is required"
+        errors.username = "Username is required";
     }
 
     if(!Validator.isEmpty(data.password)){
-        errors.password = "Password is required"
+        errors.password = "Password is required";
     }
 
     return {

@@ -18,15 +18,15 @@ module.exports = function validateRegisterInput(data) {
     }
 
     if(!Validator.isAlphanumeric(data.username)){
-        errors.username = "Username should contain alphabetic characters"
+        errors.username = "Username should contain alphabetic characters";
     }
 
     if(Validator.isEmpty(data.username)){
-        errors.username = "Username is required"
+        errors.username = "Username is required";
     }
 
     if(Validator.isEmpty(data.password)){
-        errors.password = "Password is required"
+        errors.password = "Password is required";
     }
 
     if(!Validator.isLength(data.password, {min: 6, max: 30})){
@@ -40,5 +40,5 @@ module.exports = function validateRegisterInput(data) {
     return {
         errors,
         isValid: Object.keys(errors).length === 0
-    }
-}
+    };
+};
