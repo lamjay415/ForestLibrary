@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 app.get('/', (req, res) => res.send("Forest Library test"));
 
 const db = require('./config/keys').mongoURI;
-mongoose.connect(db, { useNewUrlParser: true})
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log('connected to MongoDB successfully'))
     .catch(err => console.log(err));
 
