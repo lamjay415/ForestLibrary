@@ -2,13 +2,15 @@
   font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  height:50px;
   border-bottom: 1px solid lightgray;
   box-shadow: 0 0 10px lightslategray;
 }
 
 .nav-bar-logo {
-  padding: 5px;
+    text-align: center;
+  padding: 10px;
 }
 
 .nav-bar-logo:hover {
