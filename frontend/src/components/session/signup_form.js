@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './signup_form.css';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -15,13 +16,20 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
-    }
+//   componentWillReceiveProps(nextProps) {
+//     if (nextProps.signedIn === true) {
+//       this.props.history.push('/login');
+//     }
 
-    this.setState({errors: nextProps.errors})
-  }
+//     this.setState({errors: nextProps.errors})
+//   }
+
+//   componentDidUpdate(oldProps){
+//       if(oldProps.signedIn !== this.props.signedIn){
+//           this.props.history.push('/login');
+//       }
+//       this.setState({errors: oldProps.errors});
+//   }
 
   update(field) {
     return e => this.setState({
@@ -37,7 +45,7 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history); 
+    this.props.signup(user, this.props.history).then(this.props.history.push('/login')); 
   }
 
   renderErrors() {
@@ -57,6 +65,7 @@ class SignupForm extends React.Component {
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit}>
           <div className="signup-form">
+            <div>Register</div>
             <br/>
               <input type="text"
                 value={this.state.username}
@@ -76,7 +85,7 @@ class SignupForm extends React.Component {
                 placeholder="Confirm Password"
               />
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className='form-button'/>
             {this.renderErrors()}
           </div>
         </form>

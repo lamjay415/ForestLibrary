@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './login_form.css';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -16,14 +17,14 @@ class LoginForm extends React.Component {
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser === true) {
-      this.props.history.push('/');
-    }
+//   componentWillReceiveProps(nextProps) {
+//     if (nextProps.currentUser === true) {
+//       this.props.history.push('/');
+//     }
 
-    // Set or clear errors
-    this.setState({errors: nextProps.errors})
-  }
+//     // Set or clear errors
+//     this.setState({errors: nextProps.errors})
+//   }
 
   // Handle field updates (called in the render method)
   update(field) {
@@ -41,7 +42,7 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user); 
+    this.props.login(user).then(this.props.history.push('/')); 
   }
 
   // Render the session errors if there are any
@@ -59,9 +60,10 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='login-form-container'>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className='login-form'>
+            <div>Login</div>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
@@ -74,7 +76,7 @@ class LoginForm extends React.Component {
                 placeholder="Password"
               />
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className='form-button'/>
             {this.renderErrors()}
           </div>
         </form>

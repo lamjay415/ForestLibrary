@@ -1,14 +1,12 @@
 import React from 'react';
+import './main_page.css';
 
 class MainPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Welcome to Forest Library</h1>
-        <footer>
-          Project created by John, Hilal, Jay
-        </footer>
+      <div className='main-page-container'>
+        <div className='main-page-header'>Welcome to Forest Library</div>
       </div>
     );
   }

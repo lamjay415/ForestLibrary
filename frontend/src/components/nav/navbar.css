@@ -1,0 +1,36 @@
+.nav-bar-container {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  box-shadow: 0 0 10px lightslategray;
+}
+
+.nav-bar-logo {
+  padding: 5px;
+}
+
+.nav-bar-logo:hover {
+  cursor: pointer;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+}
+
+.links-container > * {
+  margin: 0 15px;
+  padding: 3px 10px;
+  border: 1px solid lightgray;
+  font-size: small;
+  color: darkslategrey;
+  border-radius: 5px;
+}
+
+.links-container > *:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px lightslategray;
+  transition: 0.5s;
+}
