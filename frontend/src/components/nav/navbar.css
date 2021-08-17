@@ -3,14 +3,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height:50px;
+  height: 50px;
   border-bottom: 1px solid lightgray;
   box-shadow: 0 0 10px lightslategray;
 }
 
 .nav-bar-logo {
-    text-align: center;
+  text-align: center;
   padding: 10px;
+  font-family: "Roboto", sans-serif;
+  color: darkslategrey;
 }
 
 .nav-bar-logo:hover {
