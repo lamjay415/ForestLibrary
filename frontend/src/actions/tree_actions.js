@@ -33,7 +33,7 @@ export const fetchUserTree = id => dispatch => (
 );
 
 export const makeTree = data => dispatch => (
-  receiveNewTree(data)
+  createTree(data)
     .then(tree => dispatch(receiveNewTree(tree)))
     .catch(err => console.log(err))
 );
