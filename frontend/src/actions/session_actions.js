@@ -36,7 +36,8 @@ export const signup = user => dispatch => (
         dispatch(receiveUserSignIn())
     ), err => (
         dispatch(receiveErrors(err.response.data))
-    ))
+    )).then((user)=> 
+    dispatch(receiveCurrentUser(user)))
 );
 
 // Upon login, set the session token and dispatch the current user. Dispatch errors on failure.
@@ -55,9 +56,9 @@ export const login = user => dispatch => (
 
 export const logout = () => dispatch => {
     // Remove the token from local storage
-    localStorage.removeItem('jwtToken')
+    localStorage.removeItem('jwtToken');
     // Remove the token from the common axios header
     APIUtil.setAuthToken(false)
     // Dispatch a logout action
-    dispatch(logoutUser())
+    dispatch(logoutUser());
 };
