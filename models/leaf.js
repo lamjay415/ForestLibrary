@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const LeafSchema = new Schema({
  
+  tree: {
+    type: Schema.Types.ObjectId,
+    ref: 'trees'
+    },
   title: { 
     type: String,
     required: true 
