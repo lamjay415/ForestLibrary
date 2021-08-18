@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require("passport");
 const validateLeafInput = require('../../validation/leaves');
-const Leaf = require("../../models/Leaf")
+const Leaf = require("../../models/Leaf");
 
 router.get('/test', (req, res)=> {
     res.json({msg: "This is leaf route"});
@@ -12,7 +12,7 @@ router.get('/', (req, res)=> {
     Leaf
         .find()
         .sort({date: -1})
-        .then(leaves=> res/json(leaves))
+        .then(leaves=> res.json(leaves))
         .catch(err => res.status(400).json(err));
 });
 router.get("/user/:user_id", (req, res)=> {
@@ -30,7 +30,6 @@ router.get("/:id", (req, res)=> {
 });
 
 router.post("/", 
-    
     (req, res)=> {
         const { isValid, errors } = validateLeafInput(req.body);
 
@@ -38,11 +37,11 @@ router.post("/",
             return res.status(400).json(errors);
         }
         const newLeaf = new Leaf({
-            user: req.user.id,
             title: req.body.title,
         });
     newLeaf
      .save()
      .then(leaf => res.json(leaf));
+    //  .catch(err => console.log(err));
 });
 module.exports = router;

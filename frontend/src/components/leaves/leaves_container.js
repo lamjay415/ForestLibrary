@@ -4,7 +4,7 @@ import Leaves from './leaves';
 
 const mapStateToProps = (state) => {
     return {
-        leaves: Object.values(state.leaves.all)
+        leaves: Object.values(state.leaves)
     };
 };
 

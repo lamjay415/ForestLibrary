@@ -9,5 +9,5 @@ export const getLeaves = () => {
 // };
 
 export const addALeaf = leaf => {
-    return axios.post('/api/leaves/', leaf);
+    return axios.post('/api/leaves', leaf);
 };

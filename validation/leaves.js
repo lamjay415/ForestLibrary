@@ -5,9 +5,9 @@ module.exports = function validateLeafInput(data) {
 
     data.text = validText(data.text) ? data.text : "";
 
-    if(Validator.isEmpty(data.text)) {
-        errors.text = 'Book name is required';
-    }
+    // if(Validator.isEmpty(data.text)) {
+    //     errors.text = 'Book name is required';
+    // }
 
     return {
         errors,

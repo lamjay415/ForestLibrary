@@ -7,15 +7,17 @@ class AddLeaf extends React.Component {
 
         this.state = {
             title: "",
-            newLeaf: ""
-        }
+            // newLeaf: ""
+        };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
+   
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({ newLeaf: nextProps.newLeaf.title });
-    }
+    // componentWillReceiveProps(nextProps) {
+    //     this.setState({ newLeaf: nextProps.newLeaf.title });
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -24,13 +26,11 @@ class AddLeaf extends React.Component {
         };
 
         this.props.addLeaf(leaf);
-        this.setState({ title: '' })
+        this.setState({ title: '' });
     }
 
-    update() {
-        return e => this.setState({
-            title: e.currentTarget.value
-        });
+    update(field) {
+        return e => this.setState({ [field]: e.currentTarget.value });
     }
 
     render() {
@@ -40,14 +40,14 @@ class AddLeaf extends React.Component {
                     <div>
                         <input type="text"
                             value={this.state.title}
-                            onChange={this.update()}
+                            onChange={this.update("title")}
                             placeholder="Add a Book..."
                         />
                         <input type="submit" value="Submit" />
                     </div>
                 </form>
                 <br />
-                <LeafBox title={this.state.newTweet} />
+                {/* <LeafBox title={this.state.title} /> */}
             </div>
         )
     }

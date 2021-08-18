@@ -81,7 +81,7 @@ router.post("/login", (req, res)=> {
                     return res.status(400).json({password: "Incorrect password"})
                 }
                 
-            })
+            });
     });
 })
 

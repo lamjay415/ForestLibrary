@@ -31,8 +31,8 @@ export const fetchLeaves = () => dispatch => (
 //         .catch(err => console.log(err))
 // );
 
-export const addLeaf = leaf => dispatch => (
-    addALeaf(leaf)
+export const addLeaf = data => dispatch => (
+    addALeaf(data)
         .then(leaf => dispatch(receiveNewLeaf(leaf)))
         .catch(err => console.log(err))
 );
