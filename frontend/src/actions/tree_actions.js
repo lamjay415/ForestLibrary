@@ -37,4 +37,3 @@ export const makeTree = data => dispatch => (
     .then(tree => dispatch(receiveNewTree(tree)))
     .catch(err => console.log(err))
 );
-

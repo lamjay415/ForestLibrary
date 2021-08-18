@@ -9,5 +9,5 @@ export const getUserTree = id => {
 };
 
 export const createTree = data => {
-  return axios.post('/api/trees/', data)
+  return axios.post('/api/trees/new', data)
 }

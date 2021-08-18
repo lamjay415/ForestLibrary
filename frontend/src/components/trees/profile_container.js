@@ -4,7 +4,7 @@ import Profile from './profile';
 
 const mapStateToProps = (state) => {
   return {
-    trees: Object.values(state.trees.user),
+    // trees: Object.values(state.trees.user),
     currentUser: state.session.user
   };
 };

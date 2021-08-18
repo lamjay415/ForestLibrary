@@ -1,12 +1,9 @@
 import React from 'react';
 
 class Profile extends React.Component {
-    constructor(props) {
-        super(props);
 
-    }
     
-    componentWillMount() {
+    componentDidMount() {
         console.log(this.props.currentUser.id)
         this.props.fetchUserTree(this.props.currentUser.id);
     }
@@ -17,7 +14,7 @@ class Profile extends React.Component {
     
     render() {
 
-          return (
+      return (
             <div>
               <h2>{this.props.currentUser.username}'s Tree</h2>
             </div>

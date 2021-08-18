@@ -4,42 +4,40 @@ class TreeCreate extends React.Component {
   constructor(props) {
       super(props);
 
-      // this.state = {
-      //     text: "",
-      //     newTree: ""
-      // }
+      this.state = {
+          trunk: null,
+          newTree: null
+      }
 
       this.handleSubmit = this.handleSubmit.bind(this);
   } 
 
-  // componentWillReceiveProps(nextProps) {
-  //     this.setState({newTree: nextProps.newTree});
-  // }
+  componentWillReceiveProps(nextProps) {
+      this.setState({newTree: nextProps.newTree});
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     let tree = {
-      title: this.props.currentUser.username
+       book: this.state.newTree
     };
+
     this.props.makeTree(tree); 
   }
 
   update() {
     return e => this.setState({
-      text: e.currentTarget.value
+      book: e.currentTarget.value
     });
   }
 
   render() {
     return (
         <div>
-            <h1>{this.props.currentUser.username}</h1>
-            <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
+          {/* <h1>{this.props.currentUser.username}'s Tree</h1> */}
                 <div>
-                    <input type="text" />
-                    <input className='links-container'   
-                    type="submit" 
-                    value="Create tree" />
+                    <input type="submit" value="Create Tree" />
                 </div>
             </form>
         </div>
