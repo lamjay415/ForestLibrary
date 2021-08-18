@@ -9,8 +9,13 @@ router.get('/test', (req, res) => {
   res.json({msg: "This is the tree test route"})
 });
 
-router.post('/new', (req, res) => {
-     res.send(req.body)
+router.post('/', (req, res) => {
+    const newTree = new Tree({
+        user: req.user.id
+    });
+    newTree
+        .save()
+        .then(tree => res.json(tree));
     }
 );
 

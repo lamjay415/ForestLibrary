@@ -5,12 +5,7 @@ class AddLeaf extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.newLeaf;
-        // this.state = {
-        //     title: "",
-        //     // newLeaf: ""
-        //     author: "",
-        //     tree: this.props.params.treeId
-        // };
+       
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
@@ -24,7 +19,8 @@ class AddLeaf extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let leaf = {
-            title: this.state.title
+            title: this.state.title,
+            userId: this.state.userId
         };
 
         this.props.addLeaf(leaf);

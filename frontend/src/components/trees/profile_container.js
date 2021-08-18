@@ -4,8 +4,9 @@ import Profile from './profile';
 
 const mapStateToProps = (state) => {
   return {
-    tree: Object.values(state.entities.trees.new),
+    // tree: Object.values(state.entities.trees.new),
     currentUser: state.session.user,
+    trees: Object.values(state.entities.trees)
     // title: state.entities.trees.new.title,
     // author: state.entities.trees.new.author,
     // year: state.entities.trees.new.year,
@@ -15,8 +16,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-    fetchUserTree: id => dispatch(fetchUserTree(id))
-});
+// const mapDispatchToProps = dispatch => ({
+//     fetchUserTree: id => dispatch(fetchUserTree(id))
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, null)(Profile);

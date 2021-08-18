@@ -4,7 +4,8 @@ class Profile extends React.Component {
  
     componentDidMount() {
       console.log(this.props.currentUser.id)
-      this.props.fetchUserTree(this.props.currentUser.id);
+      
+      // this.props.fetchUserTree(this.props.currentUser.id);
     }
 
     
@@ -14,9 +15,9 @@ class Profile extends React.Component {
             <div>
               <h2>{this.props.currentUser.username}'s Tree</h2>
               <br />
-              {this.props.tree.map(data => (
+              {/* {this.props.tree.map(data => (
                 <li>{data}</li>
-              ))}
+              ))} */}
             </div>
           );
     }

@@ -9,9 +9,8 @@ const mapStateToProps = (state, ownProps) => {
         trees: Object.values(state.entities.trees),
         // newLeaf: state.leaves.new
         newLeaf: {
+            userId: ownProps.match.params.id,
             title: "",
-            author: "",
-            treeId: ownProps.match.params.treeId 
         }
     };
 };
