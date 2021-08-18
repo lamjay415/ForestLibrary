@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require("passport");
 const validateLeafInput = require('../../validation/leaves');
-const Leaf = require("../../models/Leaf");
+const Leaf = require("../../models/leaf");
 
 router.get('/test', (req, res)=> {
     res.json({msg: "This is leaf route"});

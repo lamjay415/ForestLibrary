@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Tree = require('../../models/Tree');
+const Tree = require('../../models/tree');
 
 const passport = require('passport');
 
