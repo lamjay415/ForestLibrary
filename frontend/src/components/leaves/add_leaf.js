@@ -21,6 +21,7 @@ class AddLeaf extends React.Component {
         let leaf = {
             title: this.state.title,
             userId: this.state.userId
+            
         };
 
         this.props.addLeaf(leaf);

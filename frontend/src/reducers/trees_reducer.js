@@ -7,11 +7,11 @@ import { RECEIVE_TREES, RECEIVE_TREE, RECEIVE_NEW_TREE } from '../actions/tree_a
     switch(action.type) {
       case RECEIVE_TREES:
         return Object.assign(newState, action.trees.data);
-      case RECEIVE_TREE:
-        newState[action.trees.id] = action.trees.data;
-        return newState;
+      // case RECEIVE_TREE:
+      //   newState[action.trees.id] = action.trees.data;
+      //   return newState;
       case RECEIVE_NEW_TREE:
-        newState[action.leaf.id] = action.leaf.data;
+        newState[action.tree.data.id] = action.tree.data;
         return newState;
       default:
         return state;

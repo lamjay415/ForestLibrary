@@ -32,11 +32,11 @@ class SignupForm extends React.Component {
     };
     let tree = {
       userId: this.props.session.id
-    }
+    };
 
     this.props.signup(user, this.props.history)
       .then(this.props.makeTree(tree))
-      .then(this.props.history.push('/'));
+      // .then(this.props.history.push('/'));
   }
 
   renderErrors() {

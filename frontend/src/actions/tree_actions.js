@@ -26,11 +26,11 @@ export const fetchTrees = () => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const fetchTree = userId => dispatch => (
-  getTree(userId)
-    .then(tree => dispatch(receiveUserTree(tree)))
-    .catch(err => console.log(err))
-);
+// export const fetchTree = userId => dispatch => (
+//   getTree(userId)
+//     .then(tree => dispatch(receiveUserTree(tree)))
+//     .catch(err => console.log(err))
+// );
 
 export const makeTree = data => dispatch => (
   createTree(data)

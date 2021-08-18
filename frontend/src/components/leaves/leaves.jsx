@@ -34,7 +34,7 @@ class Leaf extends React.Component {
                     <h2>All leaves</h2>
 
                     {this.state.leaves.map((leaf, idx) => {
-                        if (leaf.userId = this.props.userId){
+                        if (leaf.userId === this.props.userId){
                             return (
                                 <li key = { idx } > <LeafBox title={leaf.title} /> </li>
                             )}

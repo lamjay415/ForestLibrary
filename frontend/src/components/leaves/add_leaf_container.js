@@ -13,6 +13,10 @@ const mapStateToProps = (state, ownProps) => {
             title: "",
         }
     };
+    // return {
+    //     currentUser: state.session.currentUser,
+    //     newLeaf: state.entities.leaves.new
+    // };
 };
 
 const mapDispatchToProps = dispatch => {
