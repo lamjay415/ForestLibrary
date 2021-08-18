@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
 const mongoose = require('mongoose');
 const users = require("./routes/api/users");
 const trees = require("./routes/api/trees");
-const User = require("./models/User");
+// const User = require("./models/User");
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const leaves = require('./routes/api/leaves');
