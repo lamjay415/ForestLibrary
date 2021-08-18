@@ -1,17 +1,14 @@
 import React from 'react';
 import './tree.css';
+
+
 class TreeCreate extends React.Component {
   constructor(props) {
       super(props);
 
       this.state = {
           username: this.props.currentUser.username,
-          title: '',
-          author: '',
-          year: '',
-          img: '',
-          link: '',
-          review: ''
+          leaves: []
       }
 
       this.handleSubmit = this.handleSubmit.bind(this);

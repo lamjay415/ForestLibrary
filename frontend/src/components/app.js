@@ -27,8 +27,6 @@ const App = () => (
             <ProtectedRoute exact path="/tree" component={TreesContainer}/>
             <ProtectedRoute exact path="/profile" component={ProfileContainer} />
             <ProtectedRoute exact path="/new_tree" component={TreeCreateContainer} />
-        </Switch>
-
             <ProtectedRoute exact path='/leaves/new_leaf' component={AddLeafContainer}/>
         </div>
               
