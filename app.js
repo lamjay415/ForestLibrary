@@ -2,11 +2,13 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const users = require("./routes/api/users");
+const trees = require("./routes/api/trees");
 const User = require("./models/User");
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
 app.get('/', (req, res) => res.send("Forest Library test"));
+
 
 const db = require('./config/keys').mongoURI;
 
@@ -25,4 +27,5 @@ require('./config/passport')(passport);
 
 
 app.use("/api/users", users);
+app.use("/api/trees", trees);
 
