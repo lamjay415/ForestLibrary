@@ -66,10 +66,8 @@ class TreeCreate extends React.Component {
                   value={this.state.img}
                   onChange={this.update("img")}
               />
-              <br />
-              <Link to="/profile">
+              <br />              
                 <input className="btn-tree-form" type="submit" value="Create Tree" />
-              </Link>
             </form>
 
           </div>
