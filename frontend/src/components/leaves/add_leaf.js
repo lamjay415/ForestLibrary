@@ -4,11 +4,13 @@ import LeafBox from './leaf_box';
 class AddLeaf extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            title: "",
-            // newLeaf: ""
-        };
+        this.state = this.props.newLeaf;
+        // this.state = {
+        //     title: "",
+        //     // newLeaf: ""
+        //     author: "",
+        //     tree: this.props.params.treeId
+        // };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);

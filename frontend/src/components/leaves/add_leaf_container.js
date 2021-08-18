@@ -1,11 +1,18 @@
 import { connect } from 'react-redux';
 import { addLeaf } from '../../actions/leaf_actions';
 import AddLeaf from './add_leaf';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.session.user,
-        newLeaf: state.leaves.new
+        trees: Object.values(state.entities.trees),
+        // newLeaf: state.leaves.new
+        newLeaf: {
+            title: "",
+            author: "",
+            treeId: ownProps.match.params.treeId 
+        }
     };
 };
 
@@ -15,4 +22,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddLeaf);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AddLeaf));

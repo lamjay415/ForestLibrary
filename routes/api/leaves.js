@@ -37,7 +37,9 @@ router.post("/",
             return res.status(400).json(errors);
         }
         const newLeaf = new Leaf({
+            tree: req.tree.id,
             title: req.body.title,
+            author: req.body.author
         });
     newLeaf
      .save()

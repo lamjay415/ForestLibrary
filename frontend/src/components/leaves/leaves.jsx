@@ -34,6 +34,8 @@ class Leaf extends React.Component {
             return (
                 <div>
                     <h2>All leaves</h2>
+                    <Link to="/leaves/new_leaf">Add a Leaf</Link>
+
                     {this.state.leaves.map((leaf, idx) => (
                         <li key={idx}> <LeafBox title={leaf.title}/> </li>
                     ))}
