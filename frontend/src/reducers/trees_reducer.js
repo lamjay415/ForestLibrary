@@ -6,7 +6,7 @@ import { RECEIVE_TREES, RECEIVE_USER_TREE, RECEIVE_NEW_TREE } from '../actions/t
     let newState = Object.assign({}, state);
     switch(action.type) {
       case RECEIVE_TREES:
-        newState.all = action.trees.data;
+        newState.all = action.tree.data;
         return newState;
       case RECEIVE_USER_TREE:
         newState.user = action.tree.data;

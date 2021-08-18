@@ -5,3 +5,39 @@
      position: absolute;
      left: 550px;
 }
+
+.tree-form-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.tree-form{
+  border: 1px solirgb(197, 255, 164)ey;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tree-form > *{
+    margin-top: 10px;
+    padding: 5px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.btn-tree-form{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.btn-tree-form:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px lightslategray;
+    transition: 0.5s;
+}

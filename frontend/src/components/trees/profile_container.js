@@ -4,15 +4,13 @@ import Profile from './profile';
 
 const mapStateToProps = (state) => {
   return {
-    // trees: Object.values(state.trees.user),
+    tree: Object.values(state.entities.trees.user),
     currentUser: state.session.user
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => ({
     fetchUserTree: id => dispatch(fetchUserTree(id))
-  };
-};
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
