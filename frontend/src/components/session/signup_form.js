@@ -16,20 +16,6 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
-//   componentWillReceiveProps(nextProps) {
-//     if (nextProps.signedIn === true) {
-//       this.props.history.push('/login');
-//     }
-
-//     this.setState({errors: nextProps.errors})
-//   }
-
-//   componentDidUpdate(oldProps){
-//       if(oldProps.signedIn !== this.props.signedIn){
-//           this.props.history.push('/login');
-//       }
-//       this.setState({errors: oldProps.errors});
-//   }
 
   update(field) {
     return e => this.setState({
@@ -46,8 +32,12 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user, this.props.history)
+<<<<<<< HEAD
       .then(this.props.history.push('/'))
       .then(this.props.makeTree()); 
+=======
+    .then(this.props.history.push('/')); 
+>>>>>>> 18023da50a5d19ade5862c7fc9a4ca98140e5573
   }
 
   renderErrors() {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { connect } from 'react-redux';
 import { fetchUserTree } from '../../actions/tree_actions';
 import Profile from './profile';
@@ -21,3 +22,21 @@ const mapStateToProps = (state) => {
 // });
 
 export default connect(mapStateToProps, null)(Profile);
+=======
+import { connect } from 'react-redux';
+import { fetchUserTree } from '../../actions/tree_actions';
+import Profile from './profile';
+
+const mapStateToProps = (state) => {
+  return {
+    tree: Object.values(state.entities.trees.new),
+    currentUser: state.session.user
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+    fetchUserTree: id => dispatch(fetchUserTree(id))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+>>>>>>> 18023da50a5d19ade5862c7fc9a4ca98140e5573
