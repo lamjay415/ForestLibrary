@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const LeafSchema = new Schema({
-  // tree: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'Tree'
-  // },
+  tree: {
+    type: Schema.Types.ObjectId,
+    ref: 'Tree'
+  },
   title: { 
     type: String,
     required: true 
