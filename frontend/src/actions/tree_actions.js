@@ -1,7 +1,7 @@
-import { getTrees, getUserTree, createTree } from '../util/tree_api_util';
+import { getTrees, getTree, createTree } from '../util/tree_api_util';
 
 export const RECEIVE_TREES = "RECEIVE_TREES";
-export const RECEIVE_USER_TREE = "RECEIVE_USER_TREE";
+export const RECEIVE_TREE = "RECEIVE_TREE";
 export const RECEIVE_NEW_TREE = "RECEIVE_NEW_TREE";
 
 export const receiveTrees = trees => ({
@@ -10,7 +10,7 @@ export const receiveTrees = trees => ({
 });
 
 export const receiveUserTree = tree => ({
-  type: RECEIVE_USER_TREE,
+  type: RECEIVE_TREE,
   tree
 });
 
@@ -26,11 +26,11 @@ export const fetchTrees = () => dispatch => (
     .catch(err => console.log(err))
 );
 
-// export const fetchUserTree = id => dispatch => (
-//   getUserTree(id)
-//     .then(tree => dispatch(receiveUserTree(tree)))
-//     .catch(err => console.log(err))
-// );
+export const fetchTree = userId => dispatch => (
+  getTree(userId)
+    .then(tree => dispatch(receiveUserTree(tree)))
+    .catch(err => console.log(err))
+);
 
 export const makeTree = data => dispatch => (
   createTree(data)

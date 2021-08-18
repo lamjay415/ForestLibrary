@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import { fetchLeaves } from '../../actions/leaf_actions';
 import Leaves from './leaves';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state ) => {
     return {
-        leaves: Object.values(state.leaves)
+        leaves: Object.values(state.entities.leaves),
     };
 };
 

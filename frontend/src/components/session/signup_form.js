@@ -30,14 +30,13 @@ class SignupForm extends React.Component {
       password: this.state.password,
       password2: this.state.password2
     };
+    let tree = {
+      userId: this.props.session.id
+    }
 
     this.props.signup(user, this.props.history)
-<<<<<<< HEAD
-      .then(this.props.history.push('/'))
-      .then(this.props.makeTree()); 
-=======
-    .then(this.props.history.push('/')); 
->>>>>>> 18023da50a5d19ade5862c7fc9a4ca98140e5573
+      .then(this.props.makeTree(tree))
+      .then(this.props.history.push('/'));
   }
 
   renderErrors() {

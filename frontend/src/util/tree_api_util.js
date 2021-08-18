@@ -4,8 +4,8 @@ export const getTrees = () => {
   return axios.get('/api/trees')
 };
 
-export const getUserTree = id => {
-  return axios.get(`/api/trees/user/${id}`)
+export const getTree = userId => {
+  return axios.get(`/api/users/${userId}`)
 };
 
 export const createTree = data => {

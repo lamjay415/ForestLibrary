@@ -1,11 +1,11 @@
 import React from 'react';
+import LeavesContainer from '../leaves/leaves_container';
 
 class Profile extends React.Component {
  
     componentDidMount() {
       console.log(this.props.currentUser.id)
       
-      // this.props.fetchUserTree(this.props.currentUser.id);
     }
 
     
@@ -14,10 +14,7 @@ class Profile extends React.Component {
       return (
             <div>
               <h2>{this.props.currentUser.username}'s Tree</h2>
-              <br />
-              {/* {this.props.tree.map(data => (
-                <li>{data}</li>
-              ))} */}
+              <LeavesContainer userId={this.props.userId} />
             </div>
           );
     }

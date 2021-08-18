@@ -10,7 +10,7 @@ import TreesContainer from './trees/trees_container';
 // import TreeCreateContainer from "./trees/tree_create_container";
 import ProfileContainer from './trees/profile_container';
 
-import LeavesContainer from './leaves/leaves_container';
+// import LeavesContainer from './leaves/leaves_container';
 import AddLeafContainer from './leaves/add_leaf_container';
 import './app.css';
 
