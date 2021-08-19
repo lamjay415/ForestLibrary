@@ -7,6 +7,7 @@ import axios from 'axios';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
+
 window.axios = axios;
 document.addEventListener('DOMContentLoaded', () => {
   let store;
