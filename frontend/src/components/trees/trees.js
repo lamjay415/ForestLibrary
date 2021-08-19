@@ -24,6 +24,7 @@ export class Trees extends Component {
         return (
         <div>
             <h2>All trees</h2>
+            
         </div>
         );
     }
