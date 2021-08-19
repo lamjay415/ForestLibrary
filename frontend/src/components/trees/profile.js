@@ -55,7 +55,7 @@ class Profile extends React.Component {
                 <LeavesContainer userId={this.props.userId} />
                 <MyTree leaves={this.props.leaves}/>
               </div>
-
+            </div>
             </div>
           );
     };

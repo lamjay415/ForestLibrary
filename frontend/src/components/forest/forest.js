@@ -1,5 +1,4 @@
 import React from 'react';
-import { HeartSpinner } from "react-spinners-kit";
 
 import "./forest.css";
 
