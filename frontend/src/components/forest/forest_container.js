@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchTrees } from '../../actions/tree_actions';
+import { fetchTrees, fetchUsers } from '../../actions/tree_actions';
 
 import Forest from './forest';
 
@@ -11,8 +11,11 @@ const mSTP = state => ({
     dataIsShown: false
 });
 
-const mDTP = dispatch => ({
-  fetchTrees: () => dispatch(fetchTrees())
-});
+const mDTP = dispatch => {
+    return{
+        fetchTrees: () => dispatch(fetchTrees()),
+        fetchUsers: () => dispatch(fetchUsers())
+    }
+};
 
 export default connect(mSTP,mDTP)(Forest);

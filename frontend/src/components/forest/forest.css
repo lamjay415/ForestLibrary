@@ -2,15 +2,40 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     justify-content: space-evenly;
 }
 
 .outer-forest{
-    border-block: solid 1px;
-    padding: 100px;
+
+    background-color: burlywood;
+    margin: 100px;
+    /* padding: 100px; */
 }
 
 .tree{
   padding: 10px
+}
+
+.tree-username{
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+    align-items: stretch;
+    border: 2px solid black;
+}
+.tree-username:hover{
+  color: rgb(255, 228, 139);
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+.links{
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tree-images:hover{
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+  border-radius: 50%;
 }

@@ -11,3 +11,7 @@ export const getTree = userId => {
 export const createTree = data => {
   return axios.post('/api/trees', data)
 }
+
+export const getUsers = () => {
+  return axios.get('/api/users')
+}
