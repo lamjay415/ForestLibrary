@@ -1,4 +1,5 @@
 import React from 'react';
+import { HeartSpinner } from "react-spinners-kit";
 
 import "./forest.css";
 
@@ -8,27 +9,29 @@ export class Forest extends React.Component {
         super(props)
 
         this.state= {
-            dataIsShown: false
+            dataIsShown: false,
+            loading: true
         }
     }
     componentDidMount() {
-    this.props.fetchTrees();
+        this.props.fetchTrees();
     }
-
+    
+ 
     handleClick(e){
-        e.preventDefault() 
+        e.preventDefault()
+        
     }
-
-
-
-
 
     render() {
-
+        const { loading } = this.state;
         const trees = (this.props.trees)
         console.log(trees);
 
-        return (
+        if(!trees){
+            return null
+        }else{
+            return (
         <div className="outer-forest">
             <div className="forest">
                 {trees.map(tree => (
@@ -48,6 +51,7 @@ export class Forest extends React.Component {
             </div>
         </div>
         );
+        }
     }
 }
 export default Forest
