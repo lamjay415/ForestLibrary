@@ -11,7 +11,7 @@ router.get('/test', (req, res) => {
 
 router.post('/', (req, res) => {
     const newTree = new Tree({
-        userId: req.body.UserId,
+        userId: req.body.userId,
     });
     newTree
         .save()
