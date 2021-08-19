@@ -14,7 +14,9 @@ export class Forest extends React.Component {
         }
     }
     componentDidMount() {
-        this.props.fetchTrees();
+        if(this.props.currentUser){
+            this.props.fetchTrees();
+        }
     }
     
  
@@ -41,12 +43,12 @@ export class Forest extends React.Component {
                     onMouseEnter={() => this.setState({dataIsShown: true})}
                     onMouseLeave={() => this.setState({dataIsShown: false})}
                     >  
-                    <span>{tree.id} 🌳 {this.state.dataIsShown && (
+                    <span>{tree.id} <img src="https://image.flaticon.com/icons/png/64/740/740936.png" /> {this.state.dataIsShown && (
                         <div> this will show up</div>
-                    )}  </span>
+                        )}  
+                    </span>
                      
                     </div>
-                    
                 ))}
             </div>
         </div>
