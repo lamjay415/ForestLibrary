@@ -1,5 +1,6 @@
 import React from 'react';
 import LeafBox from './leaf_box';
+import { Link } from 'react-router-dom';
 
 class AddLeaf extends React.Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class AddLeaf extends React.Component {
             userId: this.props.currentUser,
             category: this.props.data[0].volumeInfo.categories[0],    
         };
-        console.log(leaf);
+     
         this.props.addLeaf(leaf);
         this.setState({ title: '' });
     }
@@ -35,24 +36,28 @@ class AddLeaf extends React.Component {
     })}
 
     render() {
+      
+
         if(!this.props.data) return null;
         if(this.props.data.length === 0) return null;
+        console.log(this.props.data[0]);
+        console.log(this.props.data[0].volumeInfo.infoLink);
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input type="text"
                             value={this.props.data[0].volumeInfo.title}
-                            // value={this.state.title}
                             onChange={this.update("title")}
                         />
                         <br/>
                         <input type="text"
                             value={this.props.data[0].volumeInfo.categories[0]}
-                            // value={this.state.title}
                             onChange={this.update("category")}
                         />
                         <input type="submit" value="Submit" />
+                        <br/>
+                        <Link to={this.props.data[0].volumeInfo.infoLink}>for more information</Link>
                     </div>
                 </form>
                 <br />
