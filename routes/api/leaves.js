@@ -38,7 +38,8 @@ router.post("/",
         }
         const newLeaf = new Leaf({
             title: req.body.title,
-            userId: req.body.userId
+            userId: req.body.userId,
+            category: req.body.category
         });
     newLeaf
      .save()

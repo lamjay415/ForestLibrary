@@ -6,6 +6,9 @@ const LeafSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
+  category: {
+    type: String,
+  },
   title: { 
     type: String,
     required: true 

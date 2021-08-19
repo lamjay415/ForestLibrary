@@ -5,13 +5,13 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        currentUser: state.session.user,
+        currentUser: state.session.user.id,
         trees: Object.values(state.entities.trees),
         // newLeaf: state.leaves.new
-        newLeaf: {
-            userId: ownProps.match.params.id,
-            title: "",
-        }
+        // newLeaf: {
+        //     userId: ownProps.match.params.id,
+        //     title: "",
+        // }
     };
     // return {
     //     currentUser: state.session.currentUser,

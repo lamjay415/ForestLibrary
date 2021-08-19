@@ -32,6 +32,7 @@
     "mongoose": "^5.13.7",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-meta-tags": "^1.0.1",
     "validator": "^13.6.0"
   },
   "devDependencies": {

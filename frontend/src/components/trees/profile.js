@@ -1,7 +1,11 @@
 import React from 'react';
 import LeavesContainer from '../leaves/leaves_container';
+
+import SearchBook from '../search/search_book';
+
 import MyTree from '../my_tree/myTree';
 import './profile.css';
+
 
 class Profile extends React.Component {
   constructor(props) {
@@ -35,6 +39,13 @@ class Profile extends React.Component {
       //   })
     
       return (
+
+            <div>
+              <h2>{this.props.currentUser.username}'s Tree</h2>
+              <button onClick={this.handleButton}>Create your tree</button>
+              <LeavesContainer userId={this.props.userId} />
+              <SearchBook />
+
             <div className='profile-page-container'>
               <div className='profile-page-left'>
                 <h2>{this.props.currentUser.username}'s Tree</h2>
@@ -44,6 +55,7 @@ class Profile extends React.Component {
                 <LeavesContainer userId={this.props.userId} />
                 <MyTree leaves={this.props.leaves}/>
               </div>
+
             </div>
           );
     };
