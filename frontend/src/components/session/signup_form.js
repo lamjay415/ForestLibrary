@@ -16,12 +16,14 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
+  
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
+ 
 
   handleSubmit(e) {
     e.preventDefault();
@@ -30,14 +32,15 @@ class SignupForm extends React.Component {
       password: this.state.password,
       password2: this.state.password2
     };
-    let tree = {
-      userId: this.props.session.id
-    };
+   
+   
 
-    this.props.signup(user, this.props.history)
-      .then(this.props.makeTree(tree))
-      // .then(this.props.history.push('/'));
-  }
+    this.props.signup(user, this.props.history);
+   
+    }
+  
+ 
+ 
 
   renderErrors() {
     return(

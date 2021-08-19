@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { fetchTrees } from '../../actions/tree_actions';
+import { fetchTrees, makeTree } from '../../actions/tree_actions';
 import Profile from './profile';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.user,
     trees: Object.values(state.entities.trees),
@@ -12,11 +12,13 @@ const mapStateToProps = (state) => {
         return leaf;
       }
     })
+    // currenUserId: ownProps.mapDispatchToProps.params.id,
+
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchTrees: () => dispatch(fetchTrees())
+    makeTree: tree => dispatch(makeTree(tree)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile));

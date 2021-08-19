@@ -11,7 +11,7 @@ import { RECEIVE_TREES, RECEIVE_TREE, RECEIVE_NEW_TREE } from '../actions/tree_a
       //   newState[action.trees.id] = action.trees.data;
       //   return newState;
       case RECEIVE_NEW_TREE:
-        newState[action.tree.data.id] = action.tree.data;
+        newState[action.tree.data._id] = action.tree.data;
         return newState;
       default:
         return state;
