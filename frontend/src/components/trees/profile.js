@@ -1,5 +1,6 @@
 import React from 'react';
 import LeavesContainer from '../leaves/leaves_container';
+import MyTree from '../my_tree/myTree';
 
 class Profile extends React.Component {
  
@@ -12,11 +13,9 @@ class Profile extends React.Component {
       const { trees, currentUser } = this.props;
       if(trees.length === 0) return null;
       trees.map(tree => {
-        console.log(tree.id);
 
         if(tree.userId === currentUser.id)
           {
-            console.log(tree.id);
             return (
               <div>
                 {tree.id}
@@ -24,10 +23,12 @@ class Profile extends React.Component {
             )
           }      
         })
+        debugger;
       return (
             <div>
               <h2>{this.props.currentUser.username}'s Tree</h2>
               <LeavesContainer userId={this.props.userId} />
+              <MyTree leaves={this.props.leaves}/>
             </div>
           );
     };
