@@ -9,13 +9,17 @@ class NavBar extends React.Component {
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
 
-    // this.state = {
-    //   play: true
+  //   this.state = {
+  //     play: true
 
-    // };
-    // let audio;
-    // const url = "http://streaming.tdiradio.com:8000/house.mp3";
-    // audio = new Audio(url)
+  //   };
+
+  //   const audio = new Audio("http://streaming.tdiradio.com:8000/house.mp3")
+
+
+  // playAudio = () => {
+  //   new Audio(audio).play();
+  // }
 
   }
   // componentDidMount() {
