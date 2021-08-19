@@ -9,8 +9,7 @@ export class Forest extends React.Component {
         super(props)
 
         this.state= {
-            dataIsShown: false,
-            loading: true
+            dataIsShown: false
         }
     }
     componentDidMount() {
@@ -26,7 +25,6 @@ export class Forest extends React.Component {
     }
 
     render() {
-        const { loading } = this.state;
         const trees = (this.props.trees)
         console.log(trees);
 
@@ -36,15 +34,19 @@ export class Forest extends React.Component {
             return (
         <div className="outer-forest">
             <div className="forest">
-                {trees.map(tree => (
+                {trees.map((tree, idx) => (
 
                     <div className="tree" 
                     onClick={this.handleClick} 
+                    >  
+                    <span key={idx}
+                    >{tree.id} <img 
+                    src="https://image.flaticon.com/icons/png/64/4319/4319580.png" 
                     onMouseEnter={() => this.setState({dataIsShown: true})}
                     onMouseLeave={() => this.setState({dataIsShown: false})}
-                    >  
-                    <span>{tree.id} <img src="https://image.flaticon.com/icons/png/64/740/740936.png" /> {this.state.dataIsShown && (
-                        <div> this will show up</div>
+                    /> 
+                    {this.state.dataIsShown && (
+                        <div> This will show up</div>
                         )}  
                     </span>
                      
