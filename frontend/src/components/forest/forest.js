@@ -31,10 +31,11 @@ export class Forest extends React.Component {
             return (
         <div className="outer-forest">
             <div className="forest">
+                <h1 className="book-club-title">Our Book Club</h1>
                 {trees.map((tree, idx) => (
                     <div className="tree" key={idx}> 
                     <Link className="links"
-                    to={`/users/${tree.userId}`} >
+                    to={`/users/${tree._id}`} >
                         <img className="tree-images"
                         src="https://image.flaticon.com/icons/png/64/4319/4319592.png" 
                         onMouseEnter={() => this.setState({dataIsShown: true})}
@@ -42,7 +43,7 @@ export class Forest extends React.Component {
                         /> 
                         <span className="tree-username">{tree.username}</span>
                         {this.state.dataIsShown && (
-                            <div>Hello</div>
+                            <div className="tree-info">Hello</div>
                         )}  
                     </Link>
                     </div>
