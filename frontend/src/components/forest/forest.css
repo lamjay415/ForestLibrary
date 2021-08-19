@@ -1,0 +1,16 @@
+.forest{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
+
+.outer-forest{
+    border-block: solid 1px;
+    padding: 100px;
+}
+
+.tree{
+  padding: 10px
+}

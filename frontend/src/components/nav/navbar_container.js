@@ -6,7 +6,7 @@ import NavBar from './navbar';
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: state.session.isAuthenticated,
-  userId: state.session.user.id,
+  userId: state.session.user._id,
 });
 
 export default connect(
