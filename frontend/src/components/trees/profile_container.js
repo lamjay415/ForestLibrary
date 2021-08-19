@@ -19,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     makeTree: tree => dispatch(makeTree(tree)),
+    
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile));
