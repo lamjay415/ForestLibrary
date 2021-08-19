@@ -1,5 +1,6 @@
 import React from 'react';
 import LeavesContainer from '../leaves/leaves_container';
+import SearchBook from '../search/search_book';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class Profile extends React.Component {
               <h2>{this.props.currentUser.username}'s Tree</h2>
               <button onClick={this.handleButton}>Create your tree</button>
               <LeavesContainer userId={this.props.userId} />
+              <SearchBook />
             </div>
           );
     };
