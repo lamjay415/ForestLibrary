@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import "./forest.css";
 
@@ -10,22 +11,20 @@ export class Forest extends React.Component {
         this.state= {
             dataIsShown: false
         }
+
+        console.log(props);
     }
+
     componentDidMount() {
         if(this.props.currentUser){
             this.props.fetchTrees();
+            this.props.fetchUsers();
         }
     }
     
  
-    handleClick(e){
-        e.preventDefault()
-        
-    }
-
     render() {
         const trees = (this.props.trees)
-        console.log(trees);
 
         if(!trees){
             return null
@@ -33,22 +32,21 @@ export class Forest extends React.Component {
             return (
         <div className="outer-forest">
             <div className="forest">
+                <h1 className="book-club-title">Our Book Club</h1>
                 {trees.map((tree, idx) => (
-
-                    <div className="tree" 
-                    onClick={this.handleClick} 
-                    >  
-                    <span key={idx}
-                    >{tree.id} <img 
-                    src="https://image.flaticon.com/icons/png/64/4319/4319580.png" 
-                    onMouseEnter={() => this.setState({dataIsShown: true})}
-                    onMouseLeave={() => this.setState({dataIsShown: false})}
-                    /> 
-                    {this.state.dataIsShown && (
-                        <div> This will show up</div>
+                    <div className="tree" key={idx}> 
+                    <Link className="links"
+                    to={`/users/${tree._id}`} >
+                        <img className="tree-images"
+                        src="https://image.flaticon.com/icons/png/64/4319/4319592.png" 
+                        onMouseEnter={() => this.setState({dataIsShown: true})}
+                        onMouseLeave={() => this.setState({dataIsShown: false})}
+                        /> 
+                        <span className="tree-username">{tree.username}</span>
+                        {this.state.dataIsShown && (
+                            <div className="tree-info">Hello</div>
                         )}  
-                    </span>
-                     
+                    </Link>
                     </div>
                 ))}
             </div>

@@ -1,4 +1,4 @@
-import { RECEIVE_TREES, RECEIVE_TREE, RECEIVE_NEW_TREE } from '../actions/tree_actions';
+import { RECEIVE_TREES, RECEIVE_NEW_TREE, RECEIVE_USERS } from '../actions/tree_actions';
 
   
   const TreesReducer = (state = {}, action) => {
@@ -7,9 +7,10 @@ import { RECEIVE_TREES, RECEIVE_TREE, RECEIVE_NEW_TREE } from '../actions/tree_a
     switch(action.type) {
       case RECEIVE_TREES:
         return Object.assign(newState, action.trees.data);
-      // case RECEIVE_TREE:
-      //   newState[action.trees.id] = action.trees.data;
-      //   return newState;
+
+      case RECEIVE_USERS: 
+        return Object.assign(newState, action.users.data)
+
       case RECEIVE_NEW_TREE:
         newState[action.tree.data._id] = action.tree.data;
         return newState;

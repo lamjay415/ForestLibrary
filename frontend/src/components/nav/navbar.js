@@ -5,9 +5,36 @@ import './navbar.css'
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+
+  //   this.state = {
+  //     play: true
+
+  //   };
+
+  //   const audio = new Audio("http://streaming.tdiradio.com:8000/house.mp3")
+
+
+  // playAudio = () => {
+  //   new Audio(audio).play();
+  // }
+
   }
+  // componentDidMount() {
+  //   audio.addEventListener('ended', () => this.setState({ play: false }));
+  // }
+
+  // componentWillUnmount() {
+  //   audio.removeEventListener('ended', () => this.setState({ play: false }));  
+  // }
+
+  // togglePlay = () => {
+  //   this.setState({ play: !this.state.play }, () => {
+  //     this.state.play ? this.audio.play() : this.audio.pause();
+  //   });
+  // }
 
   logoutUser(e) {
       e.preventDefault();
@@ -25,6 +52,9 @@ class NavBar extends React.Component {
             <div className='links-container'>
                 <div onClick={this.handleClick(`/users/${this.props.userId}`).bind(this)}>My Tree</div>
                 <div onClick={this.handleClick('/').bind(this)}>Home</div>
+                <div>
+                  <img src="https://image.flaticon.com/icons/png/16/898/898792.png"/>
+                </div>
                 <div onClick={this.logoutUser}>Logout</div>
             </div>
         );
