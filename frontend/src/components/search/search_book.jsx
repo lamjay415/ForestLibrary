@@ -15,18 +15,18 @@ export default function () {
             .then(response => response.json())
             .then((data) => {
                 setResult(data.items);
-
             });
-            if(!result) return null;
-            if(result.length === 0) return null;
-           
-            console.log(result[0]);
-            console.log(result[0].volumeInfo.title);
+        if(!result) return null;
+        if(result.length === 0) return null;
+        console.log(result[0]);
+        console.log(result[0].volumeInfo.title);
+        // document.getElementsByClassName("btn")[0].value = "";
+        // setBook("");
+
         
     }
     function handleChange(e) {
-        const book = e.target.value;
-        setBook(book);
+        setBook(e.target.value);
       
     }
 
@@ -37,6 +37,7 @@ export default function () {
                  type="text"
                     onChange={handleChange}
                     placeholder="Search for Books"
+                    // value={book}
                 />
                 <input className="btn" type="submit" value='search'/>
             </form>
