@@ -24,7 +24,6 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this); 
   }
   // componentDidMount() {
-  //   audio.addEventListener('ended', () => this.setState({ play: false }));
   // }
 
   // componentWillUnmount() {
@@ -51,7 +50,7 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
             <div className='links-container'>
-                <div onClick={this.handleClick(`/users/${this.props.userId}`).bind(this)}>My Tree</div>
+                <div onClick={this.handleClick(`/users/${this.props.session.user.id}`).bind(this)}>My Tree</div>
                 <div onClick={this.handleClick('/').bind(this)}>Home</div>
                 <div>
                   <img src="https://image.flaticon.com/icons/png/16/898/898792.png"/>
