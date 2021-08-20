@@ -1,3 +1,6 @@
+html{
+  color: whitesmoke;
+}
 .forest{
     display: flex;
     flex-direction: row;
@@ -13,7 +16,7 @@
     padding: 20px;
     display: flex;
     width: 600px;
-    height: 701px;
+    height: 501px;
     position: relative;
     margin-left: 290px;
     background-color: #7dc3ae;
