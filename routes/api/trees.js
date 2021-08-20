@@ -26,6 +26,7 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ notreefound: 'No tree found' }));
 });
 
+
 router.get('/profile', (req, res) => {
     res.send({msg: "Testing profile route"});
 });

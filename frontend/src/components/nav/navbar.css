@@ -1,5 +1,5 @@
 .nav-bar-container {
-  font-family: "Roboto", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,10 +11,9 @@
 .nav-bar-logo {
   text-align: center;
   padding: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: darkslategrey;
 }
-
 .nav-bar-logo:hover {
   cursor: pointer;
 }
