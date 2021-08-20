@@ -27,14 +27,14 @@
 }
 
 .profile-page-trunk {
-  margin-left: 30%;
-  height: 100px;
-  border: 1px solid rosybrown;
-  width: 10%;
-  background-color: rosybrown;
-  text-align: center;
-  padding: auto;
-  color: whitesmoke;
+    margin-left: 28%;
+    height: 100px;
+    border: 1px solid rosybrown;
+    width: 10%;
+    background-color: #964b00;
+    text-align: center;
+    padding: auto;
+    color: whitesmoke;
 }
 
 .profile-page-tree{
