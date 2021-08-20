@@ -31,22 +31,11 @@ class Profile extends React.Component {
       if(trees.length === 0) return null;
       return (
 
-<<<<<<< HEAD
           <div>
             <div className='profile-page-container'>
               <div className='profile-page-left'>
                 <button onClick={this.handleButton}>Create your tree</button>
                 <SearchBook />
-=======
-            <div>
-              {/* <h2>{this.props.currentUser.username}'s Tree</h2> */}
-              <LeavesContainer userId={this.props.userId} />
-              <SearchBook />
-
-            <div className='profile-page-container'>
-              <div className='profile-page-left'>
-                {/* <h2>{currentUser.username}'s Tree</h2> */}
->>>>>>> cc5bcbd4b4b234a3a45fa1b8a28f8ce2d7ab471b
               </div>
               <div className='profile-page-other'>
                 <div className='profile-page-mid-right'>
