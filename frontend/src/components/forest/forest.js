@@ -33,7 +33,6 @@ export class Forest extends React.Component {
             return (
         <div className="outer-forest">
             <div className="forest">
-                <h1 className="book-club-title">Our Book Club</h1>
                 {trees.map((tree, idx) => (
                     <div className="tree" key={idx}> 
                     <Link className="links"
