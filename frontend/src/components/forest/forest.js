@@ -16,11 +16,8 @@ export class Forest extends React.Component {
     }
 
     componentDidMount() {
-        
-        if(this.props.currentUser){
             this.props.fetchTrees();
             this.props.fetchUsers();
-        }
     }
     
  
@@ -35,7 +32,8 @@ export class Forest extends React.Component {
             <div className="forest">
                 {trees.map((tree, idx) => (
                     <div className="tree" key={idx}> 
-                    <Link className="links"
+
+                   <Link className="links"
                     to={`/users/${tree._id}`} >
                         <img className="tree-images"
                         src="https://image.flaticon.com/icons/png/64/4319/4319580.png" 
@@ -43,11 +41,9 @@ export class Forest extends React.Component {
                         onMouseLeave={() => this.setState({dataIsShown: false})}
                         /> 
                         <span className="tree-username">{tree.username}</span>
-                        {this.state.dataIsShown && (
-                            <div className="tree-info">Hello</div>
-                        )}  
-                    </Link>
+                    </Link> 
                     </div>
+                
                 ))}
             </div>
         </div>

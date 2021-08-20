@@ -1,5 +1,6 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import {Route} from 'react-router-dom';
 // import { Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 import MainPage from './main/main_page';
@@ -14,16 +15,16 @@ const App = () => (
     <div>
         <NavBarContainer/>
         <div>
-            <AuthRoute exact path="/" component={MainPage} />
-            {/* <ProtectedRoute exact path='/' component={LeavesContainer} /> */}
-        </div>
-        <div>
+         <div>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/register" component={SignupFormContainer} />
-            <ProtectedRoute exact path="/" component={ForestContainer}/>
-            <ProtectedRoute exact path="/users/:id" component={ProfileContainer} />
+            <Route exact path="/users/:id" component={ProfileContainer} />
+            <Route exact path="/" component={ForestContainer}/>
             {/* <ProtectedRoute exact path="/users/userId" component={TreeCreateContainer} /> */}
         </div>
+\            {/* <ProtectedRoute exact path='/' component={LeavesContainer} /> */}
+        </div>
+   
         <div>
         </div>
               
