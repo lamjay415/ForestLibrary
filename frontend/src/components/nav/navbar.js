@@ -21,6 +21,7 @@ class NavBar extends React.Component {
   //   new Audio(audio).play();
   // }
 
+    this.getLinks = this.getLinks.bind(this); 
   }
   // componentDidMount() {
   //   audio.addEventListener('ended', () => this.setState({ play: false }));

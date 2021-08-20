@@ -46,4 +46,20 @@ router.post("/",
      .then(leaf => res.json(leaf));
     //  .catch(err => console.log(err));
 });
+
+router.patch("/:id", (req, res)=> {
+     Leaf.findByIdAndUpdate(req.params._id,{
+         review: req.body.review
+     }),
+     {new: true},
+     (error, data) => {
+         if(error){
+             res.json(error)
+         }else{
+             console.log(data)
+             res.json(data)
+         }
+     }
+});
+
 module.exports = router;

@@ -7,7 +7,6 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ForestContainer from './forest/forest_container';
 import ProfileContainer from './trees/profile_container';
-import AddLeafContainer from './leaves/add_leaf_container';
 
 import './app.css';
 
@@ -26,7 +25,6 @@ const App = () => (
             {/* <ProtectedRoute exact path="/users/userId" component={TreeCreateContainer} /> */}
         </div>
         <div>
-            <ProtectedRoute exact path='/users/:id' component={AddLeafContainer}/>
         </div>
               
     </div>
