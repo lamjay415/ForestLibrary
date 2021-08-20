@@ -7,7 +7,7 @@
 
 - Users can sign up, login and log out 
 - Users can see all trees of other users
-- Users can click on a tree and see the detail of other users
+- Users can click on a tree and see the detail page of that particular tree
 - Users can go their profile page and create a tree
 - Users can add a book on their tree
 - Users can review on a book
