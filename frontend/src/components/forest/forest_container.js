@@ -5,7 +5,7 @@ import Forest from './forest';
 
 const mSTP = state => ({
     loggedIn: state.session.isAuthenticated,
-    currentUser: state.session.user.id,
+    session: state.session,
     leaves: state.entities.leaves,
     trees: Object.values(state.entities.trees),
     dataIsShown: false

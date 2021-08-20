@@ -20,7 +20,7 @@ class AddLeaf extends React.Component {
         e.preventDefault();
         let leaf = {
             title: this.props.data[0].volumeInfo.title,
-            userId: this.props.currentUser,
+            userId: this.props.session.user.id,
             category: this.props.data[0].volumeInfo.categories[0],    
         };
      
