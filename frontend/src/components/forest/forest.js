@@ -16,6 +16,7 @@ export class Forest extends React.Component {
     }
 
     componentDidMount() {
+        
         if(this.props.currentUser){
             this.props.fetchTrees();
             this.props.fetchUsers();
