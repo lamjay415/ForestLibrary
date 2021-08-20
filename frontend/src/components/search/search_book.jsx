@@ -38,7 +38,7 @@ export default function () {
                     onChange={handleChange}
                     placeholder="Search for Books"
                 />
-                <button className="btn" type="submit">Search</button>
+                <input className="btn" type="submit" value='search'/>
             </form>
             
             <AddLeaf data={result}/>

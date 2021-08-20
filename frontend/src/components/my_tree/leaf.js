@@ -25,8 +25,8 @@ class Leaf extends React.Component{
         const {leaf} = this.props;
         const review_div = (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type='text'
+                <form onSubmit={this.handleSubmit} className='leaf-review-form'>
+                    <textarea
                     placeholder='write review here!'
                     onChange={this.updateReview}
                     />
