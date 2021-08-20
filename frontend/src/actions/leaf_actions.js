@@ -1,8 +1,8 @@
-import {addALeaf, getLeaves} from '../util/leaf_api_util';
+import {addALeaf, getLeaves, updateLeaf} from '../util/leaf_api_util';
 
 export const RECEIVE_LEAVES = "RECEIVE_LEAVES";
 // export const RECEIVE_USER_LEAVES = "RECEIVE_USER_LEAVES";
-export const RECEIVE_NEW_LEAF = "RECEIVE_NEW_LEAF";
+export const RECEIVE_LEAF = "RECEIVE_LEAF";
 
 export const receiveLeaves = leaves => ({
     type: RECEIVE_LEAVES,
@@ -14,8 +14,8 @@ export const receiveLeaves = leaves => ({
 //     leaves
 // });
 
-export const receiveNewLeaf = leaf => ({
-    type: RECEIVE_NEW_LEAF,
+export const receiveLeaf = leaf => ({
+    type: RECEIVE_LEAF,
     leaf
 })
 
@@ -33,6 +33,12 @@ export const fetchLeaves = () => dispatch => (
 
 export const addLeaf = data => dispatch => (
     addALeaf(data)
-        .then(leaf => dispatch(receiveNewLeaf(leaf)))
+        .then(leaf => dispatch(receiveLeaf(leaf)))
         .catch(err => console.log(err))
 );
+
+export const editLeaf = data => dispatch => (
+    updateLeaf(data)
+        .then(leaf => dispatch(receiveLeaf(leaf)))
+        .catch(err => console.log(err))
+)

@@ -1,4 +1,4 @@
-import { RECEIVE_LEAVES, RECEIVE_NEW_LEAF } from '../actions/leaf_actions';
+import { RECEIVE_LEAVES, RECEIVE_LEAF } from '../actions/leaf_actions';
 
 const LeavesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -9,7 +9,7 @@ const LeavesReducer = (state = {}, action) => {
         // case RECEIVE_USER_LEAVES:
         //     newState.user = action.leaves;
         //     return newState;
-        case RECEIVE_NEW_LEAF:
+        case RECEIVE_LEAF:
             newState[action.leaf.data._id] = action.leaf.data;
             return newState;
         default:

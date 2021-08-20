@@ -11,3 +11,7 @@ export const getLeaves = () => {
 export const addALeaf = leaf => {
     return axios.post('/api/leaves', leaf);
 };
+
+export const updateLeaf = leaf => {
+    return axios.patch(`/api/leaves/${leaf._id}`, leaf);
+}
