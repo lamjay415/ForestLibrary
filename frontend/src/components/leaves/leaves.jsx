@@ -30,8 +30,6 @@ class Leaf extends React.Component {
         } 
             return (
                 <div>
-                    <h2>All leaves</h2>
-
                     {this.state.leaves.map((leaf, idx) => {
                         if (leaf.userId === this.props.userId){
                             return (

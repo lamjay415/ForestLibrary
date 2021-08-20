@@ -35,14 +35,12 @@ class Profile extends React.Component {
 
             <div>
               {/* <h2>{this.props.currentUser.username}'s Tree</h2> */}
-              <button onClick={this.handleButton}>Create your tree</button>
               <LeavesContainer userId={this.props.userId} />
               <SearchBook />
 
             <div className='profile-page-container'>
               <div className='profile-page-left'>
                 {/* <h2>{currentUser.username}'s Tree</h2> */}
-                <button onClick={this.handleButton}>Create your tree</button>
               </div>
               <div className='profile-page-other'>
                 <div className='profile-page-mid-right'>

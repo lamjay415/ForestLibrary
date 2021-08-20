@@ -21,6 +21,7 @@ export default function () {
             if(result.length === 0) return null;
             console.log(result);
             console.log(result[0].volumeInfo.title);
+
             console.log(result[0].volumeInfo.categorization[0]);
         
     }
@@ -31,7 +32,7 @@ export default function () {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form className="form-search" onSubmit={handleSubmit}>
                 <input className="btn"
                  type="text"
                     onChange={handleChange}
