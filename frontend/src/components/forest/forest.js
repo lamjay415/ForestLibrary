@@ -38,7 +38,7 @@ export class Forest extends React.Component {
                     <Link className="links"
                     to={`/users/${tree._id}`} >
                         <img className="tree-images"
-                        src="https://image.flaticon.com/icons/png/64/4319/4319592.png" 
+                        src="https://image.flaticon.com/icons/png/64/4319/4319580.png" 
                         onMouseEnter={() => this.setState({dataIsShown: true})}
                         onMouseLeave={() => this.setState({dataIsShown: false})}
                         /> 
