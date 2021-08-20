@@ -23,7 +23,7 @@ export class Forest extends React.Component {
  
     render() {
         const trees = (this.props.trees)
-
+        const {loggedIn} = this.props;
         if(!trees){
             return null
         }else{

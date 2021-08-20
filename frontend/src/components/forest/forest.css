@@ -11,8 +11,8 @@ html{
 }
 
 .outer-forest{
+    border-radius: 50px;
     margin: 100px;
-    /* margin-top: 20px; */
     padding: 20px;
     display: flex;
     width: 600px;
