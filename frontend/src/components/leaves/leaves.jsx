@@ -28,7 +28,6 @@ class Leaf extends React.Component {
                     <h3>There are no leaves</h3>
                 </div>)
         } 
-        console.log(this.state.leaves)
             return (
                 <div>
                     <h2>All leaves</h2>

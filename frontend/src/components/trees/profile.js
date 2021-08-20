@@ -34,14 +34,14 @@ class Profile extends React.Component {
       return (
 
             <div>
-              <h2>{this.props.currentUser.username}'s Tree</h2>
+              {/* <h2>{this.props.currentUser.username}'s Tree</h2> */}
               <button onClick={this.handleButton}>Create your tree</button>
               <LeavesContainer userId={this.props.userId} />
               <SearchBook />
 
             <div className='profile-page-container'>
               <div className='profile-page-left'>
-                <h2>{currentUser.username}'s Tree</h2>
+                {/* <h2>{currentUser.username}'s Tree</h2> */}
                 <button onClick={this.handleButton}>Create your tree</button>
               </div>
               <div className='profile-page-other'>
@@ -51,8 +51,7 @@ class Profile extends React.Component {
                     <AddLeafContainer/>
                   </div>
                 </div>
-                <div className='profile-page-trunk'>
-                  {currentUser.username}</div>
+                <div className='profile-page-trunk'></div>
               </div>
             </div>
             </div>
