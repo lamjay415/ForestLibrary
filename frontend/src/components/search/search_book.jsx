@@ -19,20 +19,22 @@ export default function () {
             });
             if(!result) return null;
             if(result.length === 0) return null;
+           
             console.log(result[0]);
             console.log(result[0].volumeInfo.title);
-            console.log(result[0].volumeInfo.categorization[0]);
         
     }
     function handleChange(e) {
         const book = e.target.value;
         setBook(book);
+      
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
                 <input type="text"
+                    id='input'
                     onChange={handleChange}
                     placeholder="Search for Books"
                 />
