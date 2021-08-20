@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AddLeaf from '../leaves/add_leaf_container';
-
+import './search.css'
 
 export default function () {
     const [book, setBook] = useState("");
@@ -19,7 +19,7 @@ export default function () {
             });
             if(!result) return null;
             if(result.length === 0) return null;
-            console.log(result[0]);
+            console.log(result);
             console.log(result[0].volumeInfo.title);
             console.log(result[0].volumeInfo.categorization[0]);
         
@@ -32,11 +32,12 @@ export default function () {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text"
+                <input className="btn"
+                 type="text"
                     onChange={handleChange}
                     placeholder="Search for Books"
                 />
-                <button type="submit">Search</button>
+                <button className="btn" type="submit">Search</button>
             </form>
             
             <AddLeaf data={result}/>
