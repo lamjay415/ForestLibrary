@@ -28,7 +28,7 @@
 }
 
 .profile-page-trunk {
-    margin-left: 28%;
+    margin-left: 22.5%;
     height: 100px;
     border: 1px solid rosybrown;
     width: 10%;
@@ -59,6 +59,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: darkslategray;
+  margin-left: -70px;
 }
 
 .tree-leaf {
@@ -76,12 +77,15 @@
 }
 
 .tree-leaf-info {
-  position: absolute;
-  top: 40%;
-  left: 70%;
-  width: 150px;
-  /* right: 15%; */
-  border: 1px solid burlywood;
-  padding: 15px;
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    width: 150px;
+    /* right: 15%; */
+    border: 1px solid #71685c;
+    padding: 15px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
