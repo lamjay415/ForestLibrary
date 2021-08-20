@@ -29,6 +29,7 @@ class Profile extends React.Component {
     }
 
     render() {
+      debugger;
       const { trees, currentUser } = this.props;
       if(trees.length === 0) return null;
       return (
