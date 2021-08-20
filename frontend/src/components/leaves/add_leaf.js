@@ -1,5 +1,4 @@
 import React from 'react';
-import LeafBox from './leaf_box';
 import { Link } from 'react-router-dom';
 
 class AddLeaf extends React.Component {

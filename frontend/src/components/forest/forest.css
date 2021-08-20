@@ -1,3 +1,6 @@
+html{
+  color: whitesmoke;
+}
 .forest{
     display: flex;
     flex-direction: row;
@@ -8,13 +11,17 @@
 }
 
 .outer-forest{
+    border-radius: 50px;
     margin: 100px;
+    padding: 20px;
     display: flex;
-    border: solid;
-    width: 500px;
-    height: 400px;
+    width: 600px;
+    height: 501px;
     position: relative;
-    margin-left: 370px;
+    margin-left: 290px;
+    background-color: #7dc3ae;
+    flex-wrap: wrap;
+    align-content: space-between;
 }
 
 .tree{
@@ -29,7 +36,7 @@
     padding: 2px;
     justify-content: space-evenly;
     align-items: stretch;
-    
+    color: #edf4e0;
 }
 .tree-username:hover{
   color: rgb(255, 156, 62);
@@ -63,3 +70,4 @@
     position: absolute;
     margin-bottom: 350px;
 }
+

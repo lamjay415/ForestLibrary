@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AddLeaf from '../leaves/add_leaf_container';
-
+import './search.css'
 
 export default function () {
     const [book, setBook] = useState("");
@@ -32,13 +32,13 @@ export default function () {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input type="text"
-                    id='input'
+            <form className="form-search" onSubmit={handleSubmit}>
+                <input className="btn"
+                 type="text"
                     onChange={handleChange}
                     placeholder="Search for Books"
                 />
-                <button type="submit">Search</button>
+                <button className="btn" type="submit">Search</button>
             </form>
             
             <AddLeaf data={result}/>
