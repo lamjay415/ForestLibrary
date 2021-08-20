@@ -36,3 +36,9 @@
     box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 
 }
+#root > div > div:nth-child(2) > div > div > div:nth-child(1) > li:nth-child(1) > div > h3{
+    display: none;
+}
+#root > div > div:nth-child(2) > div > div > div:nth-child(1) > li:nth-child(2) > div{
+    display: none;
+}
