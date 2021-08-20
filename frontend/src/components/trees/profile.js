@@ -1,6 +1,4 @@
 import React from 'react';
-import LeavesContainer from '../leaves/leaves_container';
-
 import SearchBook from '../search/search_book';
 
 import { connect } from 'react-redux';
@@ -33,16 +31,11 @@ class Profile extends React.Component {
       if(trees.length === 0) return null;
       return (
 
-            <div>
-              {/* <h2>{this.props.currentUser.username}'s Tree</h2> */}
-              <button onClick={this.handleButton}>Create your tree</button>
-              <LeavesContainer userId={this.props.userId} />
-              <SearchBook />
-
+          <div>
             <div className='profile-page-container'>
               <div className='profile-page-left'>
-                {/* <h2>{currentUser.username}'s Tree</h2> */}
                 <button onClick={this.handleButton}>Create your tree</button>
+                <SearchBook />
               </div>
               <div className='profile-page-other'>
                 <div className='profile-page-mid-right'>
