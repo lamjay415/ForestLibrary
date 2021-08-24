@@ -1,18 +1,21 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
+import Modal from '../modal/modal'
 import './navbar.css'
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.state = {
+      show: false
+    };
 
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
-
-  //   this.state = {
-  //     play: true
-
-  //   };
+    this.showModal = this.showModal.bind(this);
+    this.hideModal = this.hideModal.bind(this);
+    this.getLinks = this.getLinks.bind(this); 
 
   //   const audio = new Audio("http://streaming.tdiradio.com:8000/house.mp3")
 
@@ -21,7 +24,6 @@ class NavBar extends React.Component {
   //   new Audio(audio).play();
   // }
 
-    this.getLinks = this.getLinks.bind(this); 
   }
   // componentDidMount() {
   // }
@@ -35,6 +37,17 @@ class NavBar extends React.Component {
   //     this.state.play ? this.audio.play() : this.audio.pause();
   //   });
   // }
+  showModal(){
+    this.setState({
+      modal: true
+    })
+  }
+
+  hideModal(){
+    this.setState({
+      modal: false
+    })
+  }
 
   logoutUser(e) {
       e.preventDefault();
@@ -72,6 +85,13 @@ class NavBar extends React.Component {
       return (
         <div className='nav-bar-container'>
             <div className='nav-bar-logo' onClick={this.handleClick('/').bind(this)}>Forest Library</div>
+              <Modal show={this.state.modal} handleClose={this.hideModal} />
+              <div 
+                className="nav-icons" 
+                id="instructions-icon"
+                >
+                      <img src="https://image.flaticon.com/icons/png/64/4293/4293092.png" id="img-instructions" onClick={this.showModal}/>
+                </div>
             { this.getLinks() }
         </div>
       );
