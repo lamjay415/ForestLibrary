@@ -35,9 +35,10 @@ class Search extends React.Component {
             .then((data) => {
                 this.setState({ book: "", result: data.items, apiKey: "AIzaSyB8uY1e1Cxe0tLz_rRJtjqjOGZb3Sw2ITA" });
             }).catch(err=> console.log(err));
+        
             if (!this.state.result) return null;
             if (this.state.result.length === 0) return null;
-            console.log(this.state.result.length);
+           
         }
         
        
@@ -52,6 +53,7 @@ class Search extends React.Component {
    
 
     render () {
+        if(!this.state.result) return null;
         if(this.state.result === 0) return null;
         if(this.state.warning) {
             return (
@@ -86,10 +88,9 @@ class Search extends React.Component {
                         <li key={i}>
                             <button onClick={(e) => {
                                 const bookTitle = e.target.alt;
-                                console.log(bookTitle);
                                 this.setState({
                                     
-                                    detailComponent:(<div style={{postition:"absolute"}}><AddLeaf bookTitle={bookTitle}/></div>)
+                                    detailComponent:(<div style={{postition:"absolute"}}><AddLeaf bookTitle={bookTitle} bookAuthor={book.volumeInfo.authors}/></div>)
                                 })
                             }}>
                                 <img id="book-img" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
