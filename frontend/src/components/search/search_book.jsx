@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AddLeaf from '../leaves/add_leaf_container';
 import './search.css'
 
-export default function () {
+export default function Search() {
     const [book, setBook] = useState("");
     const [result, setResult] = useState([]);
     const [apiKey, setApiKey] = useState("AIzaSyB8uY1e1Cxe0tLz_rRJtjqjOGZb3Sw2ITA");
@@ -31,8 +31,10 @@ export default function () {
     }
     function handleBook(element){
         const book = element.target.alt;
-        console.log(element.target);
-      return   (<AddLeaf bookTitle={book} />)
+        console.log(book);
+        // return <AddLeaf bookTitle={book} />
+        return <div><h3>Heyyy</h3></div>
+        
       
     }
     
@@ -59,6 +61,7 @@ export default function () {
                     
                 ))}
             </ul>
+           
         </div>
     )
 }

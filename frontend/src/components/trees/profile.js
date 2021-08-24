@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBook from '../search/search_book';
+import SearchBook from '../search/search';
 
 import { connect } from 'react-redux';
 import { fetchLeaves } from '../../actions/leaf_actions';
@@ -41,7 +41,7 @@ class Profile extends React.Component {
                 <div className='profile-page-mid-right'>
                   <MyTree leaves={this.props.leaves} currentUser={this.props.currentUser}/>
                   <div className='profile-page-right'>
-                    <AddLeafContainer/>
+                    {/* <AddLeafContainer/> */}
                   </div>
                 </div>
                 <div className='profile-page-trunk'></div>
