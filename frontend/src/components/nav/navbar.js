@@ -84,15 +84,18 @@ class NavBar extends React.Component {
   render() {
       return (
         <div className='nav-bar-container'>
+          
             <div className='nav-bar-logo' onClick={this.handleClick('/').bind(this)}>Forest Library</div>
+
               <Modal show={this.state.modal} handleClose={this.hideModal} />
-              <div 
+                            <div 
                 className="nav-icons" 
                 id="instructions-icon"
                 >
                       <img src="https://image.flaticon.com/icons/png/64/4293/4293092.png" id="img-instructions" onClick={this.showModal}/>
                 </div>
             { this.getLinks() }
+            
         </div>
       );
   }
