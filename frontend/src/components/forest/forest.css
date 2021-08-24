@@ -55,6 +55,7 @@ html{
   color: orangered;
   box-shadow: 0 5px 15px rgba(255, 30, 0, 0.4);
   border-radius: 50%;
+  width: 65px;
 }
 
 .tree-info{
