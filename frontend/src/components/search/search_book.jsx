@@ -11,15 +11,15 @@ export default function () {
     function handleSubmit(e) {
         e.preventDefault();
       
-        fetch('https://www.googleapis.com/books/v1/volumes?q=' + book + '&key=' + apiKey)
+        fetch('https://www.googleapis.com/books/v1/volumes?q=' + book + '&key=' + apiKey +"&maxResults=20")
             .then(response => response.json())
             .then((data) => {
                 setResult(data.items);
             });
         if(!result) return null;
         if(result.length === 0) return null;
-        console.log(result[0]);
-        console.log(result[0].volumeInfo.title);
+        console.log(result.length);
+        // console.log(result[0].volumeInfo.imageLinks.thumbnail);
         // document.getElementsByClassName("btn")[0].value = "";
         // setBook("");
 
@@ -29,6 +29,13 @@ export default function () {
         setBook(e.target.value);
       
     }
+    function handleBook(element){
+        const book = element.target.alt;
+        console.log(element.target);
+      return   (<AddLeaf bookTitle={book} />)
+      
+    }
+    
 
     return (
         <div>
@@ -37,12 +44,21 @@ export default function () {
                  type="text"
                     onChange={handleChange}
                     placeholder="Search for Books"
-                    // value={book}
                 />
                 <input className="btn" type="submit" value='search'/>
             </form>
             
-            <AddLeaf data={result}/>
+            
+            <ul>
+                {result.map((book, i) => (
+                    <li key={i}>
+                        <button onClick={handleBook}>
+                            <img id="book-img" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
+                        </button>
+                    </li>
+                    
+                ))}
+            </ul>
         </div>
     )
 }
