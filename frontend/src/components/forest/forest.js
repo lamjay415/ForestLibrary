@@ -9,21 +9,35 @@ export class Forest extends React.Component {
         super(props)
 
         this.state= {
-            dataIsShown: false
+            dataIsShown: false,
+            reload: false
         }
 
         console.log(props);
     }
 
     componentDidMount() {
-            this.props.fetchTrees();
-            this.props.fetchUsers();
+        this.props.fetchTrees();
+        this.props.fetchUsers();
+    }
+
+    refreshPage = () => {
+        this.setState(
+            {reload: true},
+            () => this.setState({reload: false})
+        )
     }
     
  
     render() {
         const trees = (this.props.trees)
         const {loggedIn} = this.props;
+           window.onload = function() {
+        if(!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
+    }
         if(!trees){
             return null
         }else{
