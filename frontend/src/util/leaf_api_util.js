@@ -8,6 +8,10 @@ export const getLeaves = () => {
 //     return axios.get(`/api/leaves/user/${id}`);
 // };
 
+export const getLeaf = id => {
+    return axios.get(`/api/leaves/${id}`);
+}
+
 export const addALeaf = leaf => {
     return axios.post('/api/leaves', leaf);
 };

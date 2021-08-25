@@ -1,5 +1,5 @@
 import React from 'react';
-import { editLeaf } from '../../actions/leaf_actions';
+import { editLeaf, fetchLeaf, fetchLeaves } from '../../actions/leaf_actions';
 import {connect} from 'react-redux';
 
 class Leaf extends React.Component{
@@ -10,6 +10,12 @@ class Leaf extends React.Component{
         this.state.review = '';
         this.updateReview = this.updateReview.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidUpdate(prevProps){
+        if(prevProps.review !== this.props.review){
+            this.fetchLeaf(this.props._id);
+        }
     }
 
     updateReview(e){
@@ -47,7 +53,8 @@ class Leaf extends React.Component{
 }
 
 const mDTP = dispatch => ({
-    editLeaf: leaf => dispatch(editLeaf(leaf))
+    editLeaf: leaf => dispatch(editLeaf(leaf)),
+    fetchLeaf: id => dispatch(fetchLeaf(id))
 });
 
 export default connect(null,mDTP)(Leaf);

@@ -1,4 +1,4 @@
-import {addALeaf, getLeaves, updateLeaf} from '../util/leaf_api_util';
+import {addALeaf, getLeaves, updateLeaf, getLeaf} from '../util/leaf_api_util';
 
 export const RECEIVE_LEAVES = "RECEIVE_LEAVES";
 // export const RECEIVE_USER_LEAVES = "RECEIVE_USER_LEAVES";
@@ -25,6 +25,11 @@ export const fetchLeaves = () => dispatch => (
         .catch(err => console.log(err))
 );
 
+export const fetchLeaf = id => dispatch => (
+    getLeaf(id)
+        .then(leaf => dispatch(receiveLeaf(leaf)))
+        .catch(err => console.log(err))
+)
 // export const fetchUserLeaves = id => dispatch => (
 //     getUserLeaves(id)
 //         .then(leaves => dispatch(receiveUserLeaves(leaves)))

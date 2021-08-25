@@ -16,13 +16,13 @@ const LeafSchema = new Schema({
   author: {
     type: String, 
   },
-
   date: { 
     type: Date, 
     default: Date.now 
     },
   review: {
-      type: String 
+      type: String,
+      default: ""
     }
 });
 
