@@ -11,7 +11,7 @@ const Instructions = () => {
                 <p className="p">Forest Library is a social network for everybody around the world who wants to create a good habit for their lives. 
                 We believe a better life comes with a better habit so let's start by reading some book!
                  </p>
-                <h1 className="title">Zero to Hero</h1>
+                <h1 className="title">A Sappling Once</h1>
                 <p className="p">
                 Here, you are a <span className="span-tree">tree</span> and you will start by adding a <span className="span-leaf">leaf</span> whenever you finish reading a book! 
                 After your account is created, check your profile. You will notice your <span className="span-tree">tree</span> has no <span className="span-leaf">leaf</span>. 

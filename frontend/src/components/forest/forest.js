@@ -16,9 +16,21 @@ export class Forest extends React.Component {
         console.log(props);
     }
 
+    getUsers(){
+        setTimeout(this.props.fetchUsers(), 2000)
+    }
+
     componentDidMount() {
         this.props.fetchTrees();
-        this.props.fetchUsers();
+        this.getUsers();
+
+    //     window.onload = function() {
+    //     if(!window.location.hash) {
+    //         window.location = window.location + '#loaded';
+    //         window.location.reload();
+    //     }
+    // }
+    this.refreshPage()
     }
 
     refreshPage = () => {
@@ -32,13 +44,10 @@ export class Forest extends React.Component {
     render() {
         const trees = (this.props.trees)
         const {loggedIn} = this.props;
-        
-           window.onload = function() {
-        if(!window.location.hash) {
-            window.location = window.location + '#loaded';
-            window.location.reload();
-        }
-    }
+
+      
+   
+
         if(!trees){
             return null
         }else{
