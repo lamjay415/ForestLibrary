@@ -10,7 +10,8 @@ class Search extends React.Component {
             apiKey: "AIzaSyB8uY1e1Cxe0tLz_rRJtjqjOGZb3Sw2ITA",
             result: [],
             detailComponent:(<div></div>),
-            warning:false
+            warning:false,
+            submitted:false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -24,11 +25,13 @@ class Search extends React.Component {
         if (this.state.book.length <= 0){
             //uyari ver
             this.setState({
-                warning:true
+                warning:true,
             })
         }else{
             this.setState({
-                warning:false
+                warning:false,
+                submitted:false
+
             })
             fetch('https://www.googleapis.com/books/v1/volumes?q=' + this.state.book + '&key=' + this.state.apiKey + "&maxResults=20")
             .then(response => response.json())
@@ -83,6 +86,7 @@ class Search extends React.Component {
                 </form>
 
                 {this.state.detailComponent}
+                {!this.state.submitted ? 
                 <ul>
                     {this.state.result.map((book, i) => (
                         <li key={i}>
@@ -90,15 +94,23 @@ class Search extends React.Component {
                                 const bookTitle = e.target.alt;
                                 this.setState({
                                     
-                                    detailComponent:(<div style={{postition:"absolute"}}><AddLeaf bookTitle={bookTitle} bookAuthor={book.volumeInfo.authors}/></div>)
+                                    detailComponent:(<div style={{postition:"absolute"}}><AddLeaf bookTitle={bookTitle} bookAuthor={book.volumeInfo.authors}/></div>),
+                                    submitted:true
                                 })
                             }}>
-                                <img id="book-img" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
+                                
+                                {book.volumeInfo.imageLinks!=null ?
+                                    <img id="book-img" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
+                                    :
+                                    <img id="book-img" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt={book.volumeInfo.title} />
+
+                                    }
                             </button>
                         </li>
 
                     ))}
                 </ul>
+                : null}
 
             </div>
         )

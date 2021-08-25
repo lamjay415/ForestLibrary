@@ -22,7 +22,7 @@ class AddLeaf extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-       
+        
      
         this.props.addLeaf(this.state.leaf);
         this.setState({leaf: { title: '' }});
