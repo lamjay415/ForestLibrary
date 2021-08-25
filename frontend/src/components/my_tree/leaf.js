@@ -12,9 +12,13 @@ class Leaf extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount(){
+        this.props.fetchLeaf(this.props.leaf._id)
+    }
+
     componentDidUpdate(prevProps){
-        if(prevProps.review !== this.props.review){
-            this.fetchLeaf(this.props._id);
+        if(prevProps.leaf.review !== this.props.leaf.review){
+            this.props.fetchLeaf(this.props.leaf._id);
         }
     }
 
@@ -41,6 +45,7 @@ class Leaf extends React.Component{
                 </form>
             </div>
         )
+        debugger;
         return(
             <div className='tree-leaf-info'>
                 <div>Title: {leaf.title}</div>
@@ -51,6 +56,10 @@ class Leaf extends React.Component{
         )
     }
 }
+
+const mSTP = state => ({
+    leaf: state.leaf
+})
 
 const mDTP = dispatch => ({
     editLeaf: leaf => dispatch(editLeaf(leaf)),

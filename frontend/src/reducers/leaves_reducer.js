@@ -15,7 +15,7 @@ const LeavesReducer = (state = {}, action) => {
         //     newState.user = action.leaves;
         //     return newState;
         case RECEIVE_LEAF:
-            newState.entities.leaves[action.leaf.data._id] = action.leaf.data;
+            newState[action.leaf.data._id] = action.leaf.data;
             return newState;
         default:
             return state;
