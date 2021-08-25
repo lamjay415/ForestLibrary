@@ -16,13 +16,14 @@ export class Forest extends React.Component {
         console.log(props);
     }
 
-    getUsers(){
-        setTimeout(this.props.fetchUsers(), 2000)
-    }
+    // getUsers(){
+    //     setTimeout(this.props.fetchUsers(), 2000)
+    // }
 
     componentDidMount() {
         this.props.fetchTrees();
-        this.getUsers();
+        // this.getUsers();
+        this.props.fetchUsers();
 
     //     window.onload = function() {
     //     if(!window.location.hash) {
