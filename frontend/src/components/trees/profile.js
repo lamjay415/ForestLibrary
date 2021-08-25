@@ -35,7 +35,7 @@ class Profile extends React.Component {
             <div className='profile-page-container'>
               <div className='profile-page-left'>
                 <div onClick={this.handleButton} className='create-tree-btn'>Create your tree</div>
-                <SearchBook />
+                {/* <SearchBook /> */}
               </div>
               <div className='profile-page-other'>
                 <div className='profile-page-mid-right'>
