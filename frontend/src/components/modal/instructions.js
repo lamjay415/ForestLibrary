@@ -19,6 +19,10 @@ const Instructions = () => {
                 We encourage you to check the home page for other <span className="span-tree">trees</span> and read their <span className="span-leaf">leaves</span>. You may notice they have <span className="span-reviews">reviews</span>when you interact so why don't you go ahead and add yours now!
                 On your profile click on the recent <span className="span-leaf">leaf</span> you just added. Go ahead and add what you think! <span className="span-example">Ex: Wow! What a book! I will commit myself to learn how to turn things into gold from now on. 5/5 </span>
                 </p>
+                <h1 className="title">Get Inspired</h1>
+                <p className="p"> So you have finished your last book and trying to decide on your new journey, click <img src="https://image.flaticon.com/icons/png/16/898/898792.png" />  on the top right corner for some inspiration.
+                 Or just play it along while you read your new favorite book!
+                </p>
             </div>
         </section>
     )

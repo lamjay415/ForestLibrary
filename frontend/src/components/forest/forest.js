@@ -32,6 +32,7 @@ export class Forest extends React.Component {
     render() {
         const trees = (this.props.trees)
         const {loggedIn} = this.props;
+        
            window.onload = function() {
         if(!window.location.hash) {
             window.location = window.location + '#loaded';
