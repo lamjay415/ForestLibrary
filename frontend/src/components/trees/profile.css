@@ -29,8 +29,9 @@
 }
 
 .profile-page-mid-right {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    margin-top: -120px;
+    justify-content: space-around;
 }
 
 .profile-page-trunk {
@@ -73,7 +74,9 @@
   flex-wrap: wrap;
   background-color: darkslategray;
   margin-left: -70px;
+
 }
+
 
 .tree-leaf {
   border-radius: 100px;
@@ -128,4 +131,11 @@
 .create-tree-btn:hover{
   box-shadow: 0 0 10px aquamarine;
   cursor: pointer;
+}
+
+.mytree-trunk{
+    position: absolute;
+    margin-top: 220px;
+    height: 150px;
+    width: 100px;
 }
