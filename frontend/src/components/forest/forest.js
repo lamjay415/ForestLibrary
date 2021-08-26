@@ -12,8 +12,7 @@ export class Forest extends React.Component {
             dataIsShown: false,
             reload: false
         }
-
-        console.log(props);
+        
     }
 
     // getUsers(){
