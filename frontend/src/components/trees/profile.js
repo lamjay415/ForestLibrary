@@ -11,7 +11,12 @@ import AddLeafContainer from '../leaves/add_leaf_container';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-    this.handleButton = this.handleButton.bind(this);
+
+    this.state = {
+      showTree: false
+    }
+
+    this.handleButton = this.handleButton.bind(this)
   }
   
   componentDidMount(){
@@ -24,6 +29,11 @@ class Profile extends React.Component {
         leaves: [],
       };
       this.props.makeTree(tree);
+
+      this.setState({
+        showTree: true
+      })
+
     }
 
     render() {
@@ -32,19 +42,20 @@ class Profile extends React.Component {
       return (
 
           <div>
+                <h1 id="mytree-username">{currentUser.username}'s Tree</h1>
             <div className='profile-page-container'>
               <div className='profile-page-left'>
-                <div onClick={this.handleButton} className='create-tree-btn'>Create your tree</div>
+   
                 {/* <SearchBook /> */}
+
               </div>
               <div className='profile-page-other'>
                 <div className='profile-page-mid-right'>
-                  <MyTree leaves={this.props.leaves} currentUser={this.props.currentUser}/>
+                  {this.state.showTree ? <MyTree leaves={this.props.leaves} currentUser={this.props.currentUser}/> : <div onClick={this.handleButton} className='create-tree-btn'>Create your tree</div>}
                   <div className='profile-page-right'>
                     {/* <AddLeafContainer/> */}
                   </div>
                 </div>
-                <div className='profile-page-trunk'></div>
               </div>
             </div>
             </div>

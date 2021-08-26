@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React from 'react';
 import Leaf from './leaf';
+import "./mytree.css";
 
 class MyTree extends React.Component{
 
@@ -8,6 +9,7 @@ class MyTree extends React.Component{
         super(props);
         this.state = {};
         this.state.curLeaf = '';
+
     }
 
     handleClick(leaf){
@@ -17,7 +19,7 @@ class MyTree extends React.Component{
     }
 
     render(){
-
+        
         let leaf_display = this.state.curLeaf !== '' ? 
             <Leaf leaf={this.state.curLeaf} currentUser={this.props.currentUser}/> : null;
 
