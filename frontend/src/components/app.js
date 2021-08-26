@@ -19,12 +19,10 @@ const App = () => (
            <div >
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/register" component={SignupFormContainer} />
-                <Route exact path="/users/:id" component={ProfileContainer} />
+                <Route exact path="/users/:user_id" component={ProfileContainer} />
                 <Route exact path="/" component={ForestContainer}/>
                 {/* <ProtectedRoute exact path="/users/userId" component={TreeCreateContainer} /> */}
-            </div>
-            <div>
-\               <ProtectedRoute exact path='/' component={Search} />
+\               <ProtectedRoute exact path='/users/:user_id' component={Search} />
             </div>
         </div>        
     </div>
