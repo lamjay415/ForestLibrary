@@ -23,9 +23,9 @@ class AddLeaf extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         
-     
+        this.props.setDetailComponent();
         this.props.addLeaf(this.state.leaf);
-        this.setState({leaf: { title: '' }});
+        //this.setState({leaf: { title: '' }});
         // document.getElementsByClassName("btn")[0].value = '';
         // console.log(document.getElementsByClassName("input")[0].value);
         // console.log(document.getElementsByClassName("input")[1].value);
@@ -42,8 +42,8 @@ class AddLeaf extends React.Component {
     }
 
     render() {
-        if(!this.state.leaf.author) return null;
-        if(!this.state.leaf.title) return null;
+        // if(!this.state.leaf.author) return null;
+        // if(!this.state.leaf.title) return null;
         return (
             <div>
                 <h2>Add Leaf</h2>

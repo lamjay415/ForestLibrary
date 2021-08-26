@@ -9,7 +9,8 @@ class Search extends React.Component {
             book: "",
             apiKey: "AIzaSyB8uY1e1Cxe0tLz_rRJtjqjOGZb3Sw2ITA",
             result: [],
-            detailComponent:(<div></div>),
+            detailComponent:null,
+
             warning:false,
             submitted:false
         };
@@ -30,7 +31,8 @@ class Search extends React.Component {
         }else{
             this.setState({
                 warning:false,
-                submitted:false
+                submitted:false,
+                detailComponent:null
 
             })
             fetch('https://www.googleapis.com/books/v1/volumes?q=' + this.state.book + '&key=' + this.state.apiKey + "&maxResults=20")
@@ -52,6 +54,12 @@ class Search extends React.Component {
     handleChange(e) {
         this.setState({ book: e.target.value, apiKey: "AIzaSyB8uY1e1Cxe0tLz_rRJtjqjOGZb3Sw2ITA" , result: []});
 
+    }
+
+    setDetailComponent(){
+        this.setState({
+            detailComponent:null
+        });
     }
    
 
@@ -85,7 +93,9 @@ class Search extends React.Component {
                     <input className="btn" type="submit" value='search' />
                 </form>
 
+
                 {this.state.detailComponent}
+
                 {!this.state.submitted ? 
                 <ul>
                     {this.state.result.map((book, i) => (
@@ -94,7 +104,7 @@ class Search extends React.Component {
                                 const bookTitle = e.target.alt;
                                 this.setState({
                                     
-                                    detailComponent:(<div style={{postition:"absolute"}}><AddLeaf bookTitle={bookTitle} bookAuthor={book.volumeInfo.authors}/></div>),
+                                    detailComponent:(<div><AddLeaf setDetailComponent={()=>{this.setDetailComponent()}} bookTitle={bookTitle} bookAuthor={book.volumeInfo.authors.length <= 0 ? ["No Author"] :book.volumeInfo.authors }/></div>),
                                     submitted:true
                                 })
                             }}>
