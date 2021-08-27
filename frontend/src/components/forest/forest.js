@@ -21,8 +21,8 @@ export class Forest extends React.Component {
 
     componentDidMount() {
         this.props.fetchTrees();
-        // this.getUsers();
         this.props.fetchUsers();
+        // this.getUsers();
 
     //     window.onload = function() {
     //     if(!window.location.hash) {
@@ -44,7 +44,7 @@ export class Forest extends React.Component {
     render() {
         const trees = (this.props.trees)
         const {loggedIn} = this.props;
-
+        console.log(this.props)
       
    
 
@@ -64,8 +64,8 @@ export class Forest extends React.Component {
                         onMouseEnter={() => this.setState({dataIsShown: true})}
                         onMouseLeave={() => this.setState({dataIsShown: false})}
                         /> 
-                        <span className="tree-username">{tree.username}</span>
                     </Link> 
+                        <span className="tree-username">{tree.username}</span>
                     </div>
                 
                 ))}

@@ -24,11 +24,12 @@ class Profile extends React.Component {
       leaves: [],
     };
 
-    this.props.makeTree(tree);
+    // this.props.makeTree(tree);
   }
 
     render() {
       const { trees, currentUser } = this.props;
+      console.log(this.props);
       if(trees.length === 0) return null;
       return (
 
