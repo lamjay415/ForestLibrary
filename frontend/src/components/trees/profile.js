@@ -1,10 +1,11 @@
 import React from 'react';
-import SearchBook from '../search/search';
+import Search from '../search/search';
 
 import { connect } from 'react-redux';
 import { fetchLeaves } from '../../actions/leaf_actions';
 import MyTree from '../my_tree/myTree';
 import './profile.css';
+import '../search/search.css';
 import AddLeafContainer from '../leaves/add_leaf_container';
 
 
@@ -35,8 +36,10 @@ class Profile extends React.Component {
                 <h1 id="mytree-username">{currentUser.username}'s Tree</h1>
             <div className='profile-page-container'>
               <div className='profile-page-left'>
-   
-                {/* <SearchBook /> */}
+                <p className="search-placeholder">
+                  Search your book here! Example: The Little Prince
+                </p>
+                <Search />
 
               </div>
               <div className='profile-page-other'>
