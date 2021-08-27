@@ -9,14 +9,21 @@ import AddLeafContainer from '../leaves/add_leaf_container';
 
 
 class Profile extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleButton = this.handleButton.bind(this);
-  }
+    constructor(props) {
+      super(props);
+      this.handleButton = this.handleButton.bind(this);
+    }
   
-  componentDidMount(){
-    this.props.fetchLeaves();
-  }
+    componentDidMount(){
+      this.props.fetchLeaves();
+      this.props.fetchTrees();
+    }
+
+    // componentDidUpdate(prevProps){
+    //   if(prevProps.leaves !== this.props.leaves){
+    //     this.props.fetchLeaves();
+    //   }
+    // }
     
     handleButton() {
       let tree= {

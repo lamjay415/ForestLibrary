@@ -20,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     makeTree: tree => dispatch(makeTree(tree)),
-    fetchLeaves: () => dispatch(fetchLeaves())
+    fetchLeaves: () => dispatch(fetchLeaves()),
+    fetchTrees: () => dispatch(fetchTrees())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile));
