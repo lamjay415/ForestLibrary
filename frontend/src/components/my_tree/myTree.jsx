@@ -20,8 +20,7 @@ class MyTree extends React.Component{
 
     render(){
         
-        let leaf_display = this.state.curLeaf !== '' ? 
-            <Leaf leaf={this.state.curLeaf} currentUser={this.props.currentUser}/> : null;
+        let leaf_display = this.state.curLeaf !== '' ? <Leaf leaf={this.state.curLeaf} currentUser={this.props.currentUser}/> : null;
 
         let leaves_div = this.props.leaves.map((leaf) => {
             let date = leaf.date.slice(0,10);
@@ -33,8 +32,6 @@ class MyTree extends React.Component{
                     onClick={this.handleClick(leaf).bind(this)}
                     />
             )
-
-        
         });
 
         return(
@@ -46,7 +43,6 @@ class MyTree extends React.Component{
                 </div>
                 {leaf_display}
                 <div className="tree-trunk">
-                    
                 </div>
             </div>
         )

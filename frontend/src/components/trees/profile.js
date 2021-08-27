@@ -1,8 +1,6 @@
 import React from 'react';
 import Search from '../search/search';
 
-import { connect } from 'react-redux';
-import { fetchLeaves } from '../../actions/leaf_actions';
 import MyTree from '../my_tree/myTree';
 import './profile.css';
 import '../search/search.css';
@@ -18,23 +16,26 @@ class Profile extends React.Component {
   
   componentDidMount(){
     this.props.fetchLeaves();
-    
-    let tree= {
+    this.props.fetchUsers();
+
+    let tree = {
       userId: this.props.currentUser.id,
       leaves: [],
     };
-
     // this.props.makeTree(tree);
   }
 
     render() {
       const { trees, currentUser } = this.props;
       console.log(this.props);
-      if(trees.length === 0) return null;
+      
+   
+      // if(trees.length === 0) return null;
+
       return (
 
           <div>
-                <h1 id="mytree-username">{currentUser.username}'s Tree</h1>
+                {/* <h1 id="mytree-username">{}'s Tree</h1> */}
             <div className='profile-page-container'>
               <div className='profile-page-left'>
                 <p className="search-placeholder">
