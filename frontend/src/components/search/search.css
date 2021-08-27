@@ -34,15 +34,18 @@
 #root > div > div.app-containers > div > div > div > div.profile-page-left > p{
     margin-top: 130px
 }
+.book-list{
+    position: relative;
+}
 .form-search{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     align-items: center;
-    height: 20px;
+    /* height: 20px; */
     width: 10%px;
-    border-bottom: 1px solid lightgray;
-    box-shadow: 0 0 10px lightslategrey;
+    /* border-bottom: 1px solid lightgray; */
+    /* box-shadow: 0 0 10px lightslategrey; */
     flex-direction: row;
 }
 

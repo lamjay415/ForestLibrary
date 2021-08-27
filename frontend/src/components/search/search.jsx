@@ -91,14 +91,14 @@ class Search extends React.Component {
                         placeholder="Search for Books"
                         value={this.state.book}
                     />
-                    <input className="btn" id="btn-submit" type="submit" value='search' />
+                    <input className="btn" id="btn-submit" type="submit" value='Search' />
                 </form>
 
 
                 {this.state.detailComponent}
 
                 {!this.state.submitted ? 
-                <ul>
+                <ul className="book-list">
                     {this.state.result.map((book, i) => (
                         <li key={i}>
                             <button onClick={(e) => {
