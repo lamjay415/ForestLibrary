@@ -22,7 +22,6 @@ const App = () => (
                 <Route exact path="/users/:user_id" component={ProfileContainer} />
                 <Route exact path="/" component={ForestContainer}/>
                 {/* <ProtectedRoute exact path="/users/userId" component={TreeCreateContainer} /> */}
-\               <ProtectedRoute exact path='/users/:user_id' component={Search} />
             </div>
         </div>        
     </div>

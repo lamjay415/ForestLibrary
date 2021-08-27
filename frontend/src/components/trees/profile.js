@@ -1,30 +1,31 @@
 import React from 'react';
-import SearchBook from '../search/search';
+import Search from '../search/search';
 
 import { connect } from 'react-redux';
 import { fetchLeaves } from '../../actions/leaf_actions';
 import MyTree from '../my_tree/myTree';
 import './profile.css';
+import '../search/search.css';
 import AddLeafContainer from '../leaves/add_leaf_container';
 
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-    this.handleButton = this.handleButton.bind(this);
+
+
   }
   
   componentDidMount(){
     this.props.fetchLeaves();
-  }
     
-    handleButton() {
-      let tree= {
-        userId: this.props.currentUser.id,
-        leaves: [],
-      };
-      this.props.makeTree(tree);
-    }
+    let tree= {
+      userId: this.props.currentUser.id,
+      leaves: [],
+    };
+
+    this.props.makeTree(tree);
+  }
 
     render() {
       const { trees, currentUser } = this.props;
@@ -32,19 +33,22 @@ class Profile extends React.Component {
       return (
 
           <div>
+                <h1 id="mytree-username">{currentUser.username}'s Tree</h1>
             <div className='profile-page-container'>
               <div className='profile-page-left'>
-                <div onClick={this.handleButton} className='create-tree-btn'>Create your tree</div>
-                {/* <SearchBook /> */}
+                <p className="search-placeholder">
+                  Search your book here! Example: The Little Prince
+                </p>
+                <Search />
+
               </div>
               <div className='profile-page-other'>
                 <div className='profile-page-mid-right'>
-                  <MyTree leaves={this.props.leaves} currentUser={this.props.currentUser}/>
+                 <MyTree leaves={this.props.leaves} currentUser={this.props.currentUser}/>
                   <div className='profile-page-right'>
                     {/* <AddLeafContainer/> */}
                   </div>
                 </div>
-                <div className='profile-page-trunk'></div>
               </div>
             </div>
             </div>

@@ -9,7 +9,7 @@ class Search extends React.Component {
             book: "",
             apiKey: "AIzaSyB8uY1e1Cxe0tLz_rRJtjqjOGZb3Sw2ITA",
             result: [],
-            detailComponent:null,
+            detailComponent: null,
 
             warning:false,
             submitted:false
@@ -26,7 +26,7 @@ class Search extends React.Component {
         if (this.state.book.length <= 0){
             //uyari ver
             this.setState({
-                warning:true,
+                warning: true,
             })
         }else{
             this.setState({
@@ -69,15 +69,16 @@ class Search extends React.Component {
         if(this.state.warning) {
             return (
             <div>
-                <h3>Enter a book name</h3>
+                <h3 id="search-bar">Enter a book title</h3>
                 <form className="form-search" onSubmit={this.handleSubmit}>
                     <input className="btn"
+                    id="btn-submit"
                         type="text"
                         onChange={this.handleChange}
                         placeholder="Search for Books"
                         value={this.state.book}
                     />
-                    <input className="btn" type="submit" value='search' />
+                    <input className="btn" id="btn-submit" type="submit" value='search' />
                 </form>
             </div>
         ) } else {
@@ -90,14 +91,14 @@ class Search extends React.Component {
                         placeholder="Search for Books"
                         value={this.state.book}
                     />
-                    <input className="btn" type="submit" value='search' />
+                    <input className="btn" id="btn-submit" type="submit" value='Search' />
                 </form>
 
 
                 {this.state.detailComponent}
 
                 {!this.state.submitted ? 
-                <ul>
+                <ul className="book-list">
                     {this.state.result.map((book, i) => (
                         <li key={i}>
                             <button onClick={(e) => {
