@@ -12,29 +12,19 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      showTree: false
-    }
 
-    this.handleButton = this.handleButton.bind(this)
   }
   
   componentDidMount(){
     this.props.fetchLeaves();
-  }
     
-    handleButton() {
-      let tree= {
-        userId: this.props.currentUser.id,
-        leaves: [],
-      };
-      this.props.makeTree(tree);
+    let tree= {
+      userId: this.props.currentUser.id,
+      leaves: [],
+    };
 
-      this.setState({
-        showTree: true
-      })
-
-    }
+    this.props.makeTree(tree);
+  }
 
     render() {
       const { trees, currentUser } = this.props;
@@ -51,7 +41,7 @@ class Profile extends React.Component {
               </div>
               <div className='profile-page-other'>
                 <div className='profile-page-mid-right'>
-                  {this.state.showTree ? <MyTree leaves={this.props.leaves} currentUser={this.props.currentUser}/> : <div onClick={this.handleButton} className='create-tree-btn'>Create your tree</div>}
+                 <MyTree leaves={this.props.leaves} currentUser={this.props.currentUser}/>
                   <div className='profile-page-right'>
                     {/* <AddLeafContainer/> */}
                   </div>
