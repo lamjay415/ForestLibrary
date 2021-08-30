@@ -4,7 +4,7 @@ import MyTree from '../my_tree/myTree';
 import './profile.css';
 
 
-class Profile extends React.Component {
+class OthersTree extends React.Component {
   constructor(props) {
     super(props);
 
@@ -33,13 +33,13 @@ class Profile extends React.Component {
 
           <div>
             <div className='profile-page-container'>
-              <div className='profile-page-left'>
+              {/* <div className='profile-page-left'>
                 <p className="search-placeholder">
                   Search your book here! Example: The Little Prince
-                </p>
-              <Link to="/search">Add A Leaf</Link>
+                </p> */}
+              {/* <Link to="/search">Add A Leaf</Link> */}
 
-              </div>
+              {/* </div> */} */}
               <div className='profile-page-other'>
                 <div className='profile-page-mid-right'>
                  <MyTree leaves={this.props.leaves} currentUser={this.props.currentUser}/>
@@ -55,4 +55,5 @@ class Profile extends React.Component {
 };
 
 
-export default Profile;
+
+export default OthersTree;

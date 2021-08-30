@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Modal from '../modal/modal'
 import './navbar.css'
 import song from '../../assets/audioFiles/Gotama - Inner Sanctuary.mp3'
@@ -87,7 +87,9 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
             <div className='links-container'>
-                <div onClick={this.handleClick(`/users/${this.props.session.user.id}`).bind(this)}>My Tree</div>
+                {/* <div onClick={this.handleClick(`/users/profile`).bind(this)}>My Tree</div> */}
+                <Link to="/users/profile">My Tree</Link>
+   
                 <div onClick={this.handleClick('/').bind(this)}>Home</div>
                 <div>
                   <img style={{

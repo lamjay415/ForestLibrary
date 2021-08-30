@@ -68,16 +68,15 @@ class Search extends React.Component {
         if(this.state.result === 0) return null;
         if(this.state.warning) {
             return (
-            <div>
-                <h3 id="search-bar">Enter a book title</h3>
+            <div className="search-div">
                 <form className="form-search" onSubmit={this.handleSubmit}>
-                    <input className="btn"
+                        <input className="btn"
                         type="text"
                         onChange={this.handleChange}
                         placeholder="Search for Books"
                         value={this.state.book}
-                    />
-                    <input className="btn" id="btn-submit" type="submit" value='search' />
+                        />
+                    <input className="btn-submit" type="submit" value='search' />
                 </form>
             </div>
         ) } else {
@@ -93,7 +92,7 @@ class Search extends React.Component {
                         />
                             <input className="btn-submit" type="submit" value='Search' />
                     </form>
-                </div>
+            </div>
 
 
                 {this.state.detailComponent}
