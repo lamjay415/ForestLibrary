@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.user,
     trees: Object.values(state.entities.trees),
     leaves: Object.values(state.entities.leaves).filter(leaf => {
-      if(leaf.userId===ownProps.match.params.id) {
+      if(leaf.userId===ownProps.match.params.user_id) {
         return leaf;
       }
     })
