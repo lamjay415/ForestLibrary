@@ -87,8 +87,8 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
             <div className='links-container'>
-                {/* <div onClick={this.handleClick(`/users/profile`).bind(this)}>My Tree</div> */}
-                <Link to="/users/profile">My Tree</Link>
+                <div onClick={this.handleClick(`/users/${this.props.session.id}/profile`).bind(this)}>My Tree</div>
+                {/* <Link to="/users/profile">My Tree</Link> */}
    
                 <div onClick={this.handleClick('/').bind(this)}>Home</div>
                 <div>

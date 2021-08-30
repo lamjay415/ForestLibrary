@@ -1,7 +1,7 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {Route} from 'react-router-dom';
-// import { Switch3 } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
@@ -21,9 +21,10 @@ const App = () => (
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/register" component={SignupFormContainer} />
                 <Route exact path="/users/:user_id" component={OthersTreeContainer} />
-                <ProtectedRoute exact path="/users/profile" component={ProfileContainer} />
-                <Route exact path="/" component={ForestContainer}/>
+                <ProtectedRoute exact path="/users/:user_id/profile" component={ProfileContainer} />
+                <Route exact path="/" component={ForestContainer} />
             </div>
+           
         </div> 
         <div>
             <ProtectedRoute exact path="/search" component={Search} />
