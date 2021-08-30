@@ -20,7 +20,7 @@ class MyTree extends React.Component{
 
     render(){
         
-        let leaf_display = this.state.curLeaf !== '' ? <Leaf leaf={this.state.curLeaf} currentUser={this.props.user}/> : null;
+        let leaf_display = this.state.curLeaf !== '' ? <Leaf leaf={this.state.curLeaf} currentUser={this.props.currentUser}/> : null;
 
         let leaves_div = this.props.leaves.map((leaf) => {
             let date = leaf.date.slice(0,10);
