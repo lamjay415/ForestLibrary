@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUsers, makeTree } from '../../actions/tree_actions';
+import { fetchUsers, makeTree, fetchTrees } from '../../actions/tree_actions';
 import { fetchLeaves } from '../../actions/leaf_actions';
 import Profile from './profile';
 import { withRouter } from 'react-router-dom';
@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     makeTree: tree => dispatch(makeTree(tree)),
     fetchLeaves: () => dispatch(fetchLeaves()),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchTrees: () => dispatch(fetchTrees())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile));

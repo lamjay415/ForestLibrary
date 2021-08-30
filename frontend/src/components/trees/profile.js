@@ -5,15 +5,29 @@ import './profile.css';
 
 
 class Profile extends React.Component {
+    constructor(props) {
+      super(props);
+      this.handleButton = this.handleButton.bind(this);
+    }
+  
+    componentDidMount(){
+      this.props.fetchLeaves();
+      this.props.fetchTrees();
+    }
 
-  constructor(props) {
-    super(props);
-  }
-  
-  componentDidMount(){
-    this.props.fetchLeaves();
-  
-  }
+    // componentDidUpdate(prevProps){
+    //   if(prevProps.leaves !== this.props.leaves){
+    //     this.props.fetchLeaves();
+    //   }
+    // }
+    
+    handleButton() {
+      let tree= {
+        userId: this.props.currentUser.id,
+        leaves: [],
+      };
+      this.props.makeTree(tree);
+    }
 
     render() {
       const { trees, currentUser } = this.props;
