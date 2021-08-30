@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import '../search/search.css'
 
 class AddLeaf extends React.Component {
@@ -30,8 +30,9 @@ class AddLeaf extends React.Component {
         // document.getElementsByClassName("btn")[0].value = '';
         // console.log(document.getElementsByClassName("input")[0].value);
         // console.log(document.getElementsByClassName("input")[1].value);
-        document.getElementsByClassName("input")[0].value = '';
-        document.getElementsByClassName("input")[1].value = '';
+        document.getElementsByClassName("btn")[0].value = '';
+        document.getElementsByClassName("btn")[1].value = '';
+        return <Redirect to="/" />
         
 
     }
