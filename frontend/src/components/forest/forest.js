@@ -50,6 +50,7 @@ export class Forest extends React.Component {
         }else{
             return (
         <div className="outer-forest">
+            
             <div className="forest">
                 {trees.map((tree, idx) => (
                     <div className="tree" key={idx}> 

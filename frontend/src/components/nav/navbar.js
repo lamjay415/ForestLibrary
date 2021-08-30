@@ -34,7 +34,7 @@ class NavBar extends React.Component {
 
       this.state.audio.pause();
       this.setState({
-        musicBgColor: "transparent"
+        musicBgColor: "lightgray"
       })
     } else {
 
