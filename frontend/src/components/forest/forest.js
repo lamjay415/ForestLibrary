@@ -9,26 +9,48 @@ export class Forest extends React.Component {
         super(props)
 
         this.state= {
-            dataIsShown: false
+            dataIsShown: false,
+            reload: false
         }
-
-        console.log(props);
+        
     }
 
+    // getUsers(){
+    //     setTimeout(this.props.fetchUsers(), 2000)
+    // }
+
     componentDidMount() {
-            this.props.fetchTrees();
-            this.props.fetchUsers();
+        this.props.fetchTrees();
+        this.props.fetchUsers();
+        // this.getUsers();
+
+    //     window.onload = function() {
+    //     if(!window.location.hash) {
+    //         window.location = window.location + '#loaded';
+    //         window.location.reload();
+    //     }
+    // }
+    this.refreshPage()
+    }
+
+    refreshPage = () => {
+        this.setState(
+            {reload: true},
+            () => this.setState({reload: false})
+        )
     }
     
  
     render() {
         const trees = (this.props.trees)
         const {loggedIn} = this.props;
+
         if(!trees){
             return null
         }else{
             return (
         <div className="outer-forest">
+            
             <div className="forest">
                 {trees.map((tree, idx) => (
                     <div className="tree" key={idx}> 
@@ -40,8 +62,8 @@ export class Forest extends React.Component {
                         onMouseEnter={() => this.setState({dataIsShown: true})}
                         onMouseLeave={() => this.setState({dataIsShown: false})}
                         /> 
-                        <span className="tree-username">{tree.username}</span>
                     </Link> 
+                        <span className="tree-username">{tree.username}</span>
                     </div>
                 
                 ))}

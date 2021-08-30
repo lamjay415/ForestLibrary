@@ -1,10 +1,15 @@
 
 .profile-page-container {
-  display: flex;
-  width: 100%;
-  height: 80vh;
-  justify-content: space-around;
-  background-color: aliceblue;
+    display: flex;
+    width: 1170px;
+    position: relative;
+    margin-left: 40px;
+    height: 570px;
+    background-color: #edf4e0;
+    border: solid 5px #5d7676;
+    border-radius: 15px;
+    margin-top: 40px;
+    flex-direction: row;
 }
 
 .profile-page-container > * {
@@ -13,7 +18,14 @@
 }
 
 .profile-page-left {
-  width: 30%;
+    display: flex;
+    height: 500px;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid;
+    margin-top: 50px;
+    width: 25%;
+    border-radius: 20px;
 }
 
 .profile-page-other {
@@ -24,8 +36,9 @@
 }
 
 .profile-page-mid-right {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    margin-top: -120px;
+    justify-content: space-around;
 }
 
 .profile-page-trunk {
@@ -47,8 +60,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: auto; */
-  justify-content: space-around;
+
 }
 
 .profile-page-left > * {
@@ -68,7 +80,9 @@
   flex-wrap: wrap;
   background-color: darkslategray;
   margin-left: -70px;
+
 }
+
 
 .tree-leaf {
   border-radius: 100px;
@@ -106,12 +120,28 @@
 }
 
 .create-tree-btn{
-  border: 1px solid gray;
-  border-radius: 10px;
-  background-color: lightseagreen;
+    border: 1px solid gray;
+    border-radius: 10px;
+    /* height: auto; */
+    background-color: lightseagreen;
+    /* display: flex; */
+    position: absolute;
+    margin-left: -380px;
+    width: 130px;
+    height: 28px;
+    margin-top: -70px;
+    padding-left: 30px;
+    padding-top: 10px;
 }
 
 .create-tree-btn:hover{
   box-shadow: 0 0 10px aquamarine;
   cursor: pointer;
+}
+
+.mytree-trunk{
+    position: absolute;
+    margin-top: 220px;
+    height: 150px;
+    width: 100px;
 }

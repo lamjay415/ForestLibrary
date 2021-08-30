@@ -63,6 +63,8 @@ class MyTree extends React.Component{
     }
 
     render(){
+        
+        // let leaf_display = this.state.curLeaf !== '' ? <Leaf leaf={this.state.curLeaf} currentUser={this.props.currentUser}/> : null;
 
         let leaf_display = this.state.curLeaf !== '' ? 
             this.renderLeaf(this.state.curLeaf) : null;
@@ -83,8 +85,12 @@ class MyTree extends React.Component{
             <div className='profile-page-tree'>
                 <div className='tree-container'>
                     {leaves_div}
+                    <img className="mytree-trunk"
+                    src="https://image.flaticon.com/icons/png/64/408/408026.png"/>
                 </div>
                 {leaf_display}
+                <div className="tree-trunk">
+                </div>
             </div>
         )
     }

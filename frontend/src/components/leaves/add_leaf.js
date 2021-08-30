@@ -1,66 +1,70 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import '../search/search.css'
 
 class AddLeaf extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = this.props.newLeaf;
-       
+        this.state = {
+            leaf: {
+                title: this.props.bookTitle,
+                userId: this.props.session.user.id,
+                author: this.props.bookAuthor, 
+            }
+          
+        };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
     }
    
 
-    // componentWillReceiveProps(nextProps) {
-    //     this.setState({ newLeaf: nextProps.newLeaf.title });
-    // }
+   
 
     handleSubmit(e) {
         e.preventDefault();
-        let leaf = {
-            title: this.props.data[0].volumeInfo.title,
-            userId: this.props.session.user.id,
-            category: this.props.data[0].volumeInfo.categories[0],    
-        };
-     
-        this.props.addLeaf(leaf);
-        this.setState({ title: '' });
+        
+        this.props.setDetailComponent();
+        this.props.addLeaf(this.state.leaf);
+        //this.setState({leaf: { title: '' }});
+        // document.getElementsByClassName("btn")[0].value = '';
+        // console.log(document.getElementsByClassName("input")[0].value);
+        // console.log(document.getElementsByClassName("input")[1].value);
+        document.getElementsByClassName("btn")[0].value = '';
+        document.getElementsByClassName("btn")[1].value = '';
+        return <Redirect to="/" />
+        
+
     }
 
     update(field) {
         return (e => {
-            this.setState({ [field]: e.currentTarget.value });
-            
-    })}
+            this.setState({ leaf: { [field]: e.currentTarget.value }});        
+        } )  
+    }
 
     render() {
-      
-
-        if(!this.props.data) return null;
-        if(this.props.data.length === 0) return null;
-        console.log(this.props.data[0]);
-        console.log(this.props.data[0].volumeInfo.infoLink);
+        // if(!this.state.leaf.author) return null;
+        // if(!this.state.leaf.title) return null;
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <input type="text"
-                            value={this.props.data[0].volumeInfo.title}
-                            onChange={this.update("title")}
-                        />
-                        <br/>
-                        <input type="text"
-                            value={this.props.data[0].volumeInfo.categories[0]}
-                            onChange={this.update("category")}
-                        />
-                        <input type="submit" value="Submit" />
-                        <br/>
-                        <Link to={this.props.data[0].volumeInfo.infoLink}>for more information</Link>
-                    </div>
+            <div className="add-leaf-div">
+                <h2>Add Leaf</h2>
+                <form onSubmit={this.handleSubmit} className="form-add-leaf">
+                    <input type="text"
+                        className="btn"
+                        value={this.state.leaf.title}
+                        onChange={this.update("title")}
+                    />
+                    <br/>
+                    <input type="text"
+                        className="btn"
+                        value={this.state.leaf.author[0]}
+                        onChange={this.update("author")}
+                    />
+                    <input className="btn-submit" type="submit" value="Submit" />
                 </form>
                 <br />
-                {/* <LeafBox title={this.state.title} /> */}
+ 
             </div>
         )
     }
