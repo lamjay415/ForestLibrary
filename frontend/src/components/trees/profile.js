@@ -17,8 +17,7 @@ class Profile extends React.Component {
 
     render() {
       const { trees, currentUser } = this.props;
-      console.log(this.props);
-      
+     
       return (
 
           <div>

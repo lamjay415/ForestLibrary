@@ -24,9 +24,7 @@ class OthersTree extends React.Component {
 
     render() {
       const { trees, currentUser } = this.props;
-      console.log(this.props);
       
-   
       // if(trees.length === 0) return null;
 
       return (
