@@ -5,7 +5,12 @@ const LeavesReducer = (state = {}, action) => {
     let newState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_LEAVES:
-            return Object.assign(newState, action.leaves.data);
+            let leaves = {};
+            for(const leaf in action.leaves.data){
+                leaves[action.leaves.data[leaf]._id] = action.leaves.data[leaf];
+            }
+            return Object.assign(newState, leaves);
+            // return Object.assign(newState, action.leaves.data);
         // case RECEIVE_USER_LEAVES:
         //     newState.user = action.leaves;
         //     return newState;

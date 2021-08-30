@@ -47,19 +47,25 @@ router.post("/",
     //  .catch(err => console.log(err));
 });
 
-router.patch("/:id", (req, res)=> {
-     Leaf.findByIdAndUpdate(req.params._id,{
-         review: req.body.review
-     }),
-     {new: true},
-     (error, data) => {
-         if(error){
-             res.json(error)
-         }else{
-             console.log(data)
-             res.json(data)
-         }
-     }
+router.patch('/:id', (req, res) => {
+    // Leaf 
+    //     .findByIdAnd(req.params.id)
+    //     .update({review: req.body.review})
+    //     .then(leaf => leaf.save());
+    Leaf.findByIdAndUpdate(req.params.id,
+        {review: req.body.review},
+        {new: true},
+        (error, data) => {
+            if(error){
+                res.json(error);
+            }else{
+                console.log(data);
+                res.json(data);
+            }
+        });
+    // Leaf 
+    //     .findById(req.params.id)
+    //     .then(leaf => res.json(leaf));
 });
 
 module.exports = router;
