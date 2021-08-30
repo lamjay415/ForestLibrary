@@ -1,10 +1,7 @@
 import React from 'react';
-import Search from '../search/search';
-
+import {Link} from 'react-router-dom';
 import MyTree from '../my_tree/myTree';
 import './profile.css';
-import '../search/search.css';
-import AddLeafContainer from '../leaves/add_leaf_container';
 
 
 class Profile extends React.Component {
@@ -35,20 +32,18 @@ class Profile extends React.Component {
       return (
 
           <div>
-                {/* <h1 id="mytree-username">{}'s Tree</h1> */}
             <div className='profile-page-container'>
               <div className='profile-page-left'>
                 <p className="search-placeholder">
                   Search your book here! Example: The Little Prince
                 </p>
-                <Search />
+              <Link to="/search">Add A Leaf</Link>
 
               </div>
               <div className='profile-page-other'>
                 <div className='profile-page-mid-right'>
                  <MyTree leaves={this.props.leaves} currentUser={this.props.currentUser}/>
                   <div className='profile-page-right'>
-                    {/* <AddLeafContainer/> */}
                   </div>
                 </div>
               </div>

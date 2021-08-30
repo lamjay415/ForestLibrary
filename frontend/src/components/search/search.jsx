@@ -35,7 +35,7 @@ class Search extends React.Component {
                 detailComponent:null
 
             })
-            fetch('https://www.googleapis.com/books/v1/volumes?q=' + this.state.book + '&key=' + this.state.apiKey + "&maxResults=20")
+            fetch('https://www.googleapis.com/books/v1/volumes?q=' + this.state.book + '&key=' + this.state.apiKey + "&maxResults=40")
             .then(response => response.json())
             .then((data) => {
                 this.setState({ book: "", result: data.items, apiKey: "AIzaSyB8uY1e1Cxe0tLz_rRJtjqjOGZb3Sw2ITA" });
@@ -72,7 +72,6 @@ class Search extends React.Component {
                 <h3 id="search-bar">Enter a book title</h3>
                 <form className="form-search" onSubmit={this.handleSubmit}>
                     <input className="btn"
-                    id="btn-submit"
                         type="text"
                         onChange={this.handleChange}
                         placeholder="Search for Books"
@@ -84,31 +83,34 @@ class Search extends React.Component {
         ) } else {
             return (
             <div>
-                <form className="form-search" onSubmit={this.handleSubmit}>
-                    <input className="btn"
-                        type="text"
-                        onChange={this.handleChange}
-                        placeholder="Search for Books"
-                        value={this.state.book}
-                    />
-                    <input className="btn" id="btn-submit" type="submit" value='Search' />
-                </form>
+                <div className="search-div">
+                    <form className="form-search" onSubmit={this.handleSubmit}>
+                        <input className="btn"
+                            type="text"
+                            onChange={this.handleChange}
+                            placeholder="Search for Books"
+                            value={this.state.book}
+                        />
+                            <input className="btn-submit" type="submit" value='Search' />
+                    </form>
+                </div>
 
 
                 {this.state.detailComponent}
 
                 {!this.state.submitted ? 
-                <ul className="book-list">
+                <div className="search-results">
+                    <ul className="book-list">
                     {this.state.result.map((book, i) => (
                         <li key={i}>
                             <button onClick={(e) => {
                                 const bookTitle = e.target.alt;
                                 this.setState({
-                                    
-                                    detailComponent:(<div><AddLeaf setDetailComponent={()=>{this.setDetailComponent()}} bookTitle={bookTitle} bookAuthor={book.volumeInfo.authors.length <= 0 ? ["No Author"] :book.volumeInfo.authors }/></div>),
-                                    submitted:true
-                                })
-                            }}>
+                                        
+                                        detailComponent:(<div><AddLeaf setDetailComponent={()=>{this.setDetailComponent()}} bookTitle={bookTitle} bookAuthor={book.volumeInfo.authors.length <= 0 ? ["No Author"] :book.volumeInfo.authors }/></div>),
+                                        submitted:true
+                                    })
+                                }}>
                                 
                                 {book.volumeInfo.imageLinks!=null ?
                                     <img id="book-img" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
@@ -120,11 +122,12 @@ class Search extends React.Component {
                         </li>
 
                     ))}
-                </ul>
-                : null}
-
+                    </ul>
+                </div>
+                    : null}
             </div>
-        )
+
+            )
     }
     }
 }

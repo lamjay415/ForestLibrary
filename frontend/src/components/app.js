@@ -16,14 +16,16 @@ const App = () => (
     <div >
         <NavBarContainer/>
         <div className="app-containers">
-           <div >
+            <div>
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/register" component={SignupFormContainer} />
                 <Route exact path="/users/:user_id" component={ProfileContainer} />
                 <Route exact path="/" component={ForestContainer}/>
-                {/* <ProtectedRoute exact path="/users/userId" component={TreeCreateContainer} /> */}
             </div>
-        </div>        
+        </div> 
+        <div>
+            <ProtectedRoute exact path="/search" component={Search} />
+        </div>
     </div>
 );
 

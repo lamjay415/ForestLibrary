@@ -17,13 +17,10 @@
       font-family: Arial, Helvetica, sans-serif;
 
 }
-.btn{
-    height: 25px;
-    padding-left: 18px;
-}
-#btn-submit{
+
+/* #btn-submit{
     height: 30px;
-}
+} */
 
 .search-placeholder{
     position: absolute;
@@ -34,19 +31,99 @@
 #root > div > div.app-containers > div > div > div > div.profile-page-left > p{
     margin-top: 130px
 }
-.book-list{
-    position: relative;
+.add-leaf-div {
+    width: 100%;
+    box-sizing: border-box;
+    height: 200px;
+    padding-left: 20%;
+    padding-right: 20%;
+
+
 }
-.form-search{
+.add-leaf-div > .form-add-leaf {
+     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    /* justify-content: flex-end; */
     align-items: center;
     /* height: 20px; */
-    width: 10%px;
     /* border-bottom: 1px solid lightgray; */
     /* box-shadow: 0 0 10px lightslategrey; */
-    flex-direction: row;
+    flex-direction: row; 
+
+}
+.search-div {
+    width: 100%;
+    box-sizing: border-box;
+    height: 200px;
+    padding-left: 30%;
+    padding-top: 50px;
+}
+.search-div > .form-search{
+   
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    /* height: 20px; */
+    /* border-bottom: 1px solid lightgray; */
+    /* box-shadow: 0 0 10px lightslategrey; */
+    flex-direction: row; 
+}
+.btn{
+    height: 30px;
+    width: 40%;
+    border-radius: 8px;
+    border: 0.5px solid rgb(167, 165, 165);
+    margin-right: 30px;
+   
+}
+.btn-submit {
+    height: 35px;
+    width: 8%;
+    border-radius: 8px;
+    border: 0.5px solid rgb(167, 165, 165);
+
+
+}
+.search-result {
+    width: 100%;
+    box-sizing: border-box;
+
+
+}
+.book-list{
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.book-list > li {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 200px;
+    border: 1px solid rgb(167, 166, 166) ;
+    border-radius: 5px;
+}
+
+li > button {
+    max-width: 120px;
+    max-height: 170px;
+    border:none;
+    padding: 3px;
+    align-content: center;
+
+
+}
+li > button > .book-img {
+    max-width: 120px;
+    max-height: 170px;
+    border: none;
+    margin: 3px;
+    align-content: center;
+
 }
 
 #root > div > div:nth-child(2) > div > div > div:nth-child(2) > div > form > div > input[type=text]:nth-child(3){
@@ -63,3 +140,5 @@
 #root > div > div:nth-child(2) > div > div > div:nth-child(1) > li:nth-child(2) > div{
     display: none;
 }
+
+

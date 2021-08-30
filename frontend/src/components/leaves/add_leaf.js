@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../search/search.css'
 
 class AddLeaf extends React.Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class AddLeaf extends React.Component {
         // console.log(document.getElementsByClassName("input")[1].value);
         document.getElementsByClassName("input")[0].value = '';
         document.getElementsByClassName("input")[1].value = '';
-
+        
 
     }
 
@@ -45,23 +46,21 @@ class AddLeaf extends React.Component {
         // if(!this.state.leaf.author) return null;
         // if(!this.state.leaf.title) return null;
         return (
-            <div>
+            <div className="add-leaf-div">
                 <h2>Add Leaf</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <input type="text"
-                            className="input"
-                            value={this.state.leaf.title}
-                            onChange={this.update("title")}
-                        />
-                        <br/>
-                        <input type="text"
-                            className="input"
-                            value={this.state.leaf.author[0]}
-                            onChange={this.update("author")}
-                        />
-                        <input type="submit" value="Submit" />
-                    </div>
+                <form onSubmit={this.handleSubmit} className="form-add-leaf">
+                    <input type="text"
+                        className="btn"
+                        value={this.state.leaf.title}
+                        onChange={this.update("title")}
+                    />
+                    <br/>
+                    <input type="text"
+                        className="btn"
+                        value={this.state.leaf.author[0]}
+                        onChange={this.update("author")}
+                    />
+                    <input className="btn-submit" type="submit" value="Submit" />
                 </form>
                 <br />
  
