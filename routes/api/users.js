@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const User = require('../../models/User');
+const User = require('../../models/user');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
@@ -42,6 +42,15 @@ router.post('/register', (req, res) => {
     });
 });
 
+
+router.get('/', (req, res) => {
+    User.find()
+        .sort({ date: -1 })
+        .then(users => res.json(users))
+        .catch(err => res.status(404).json({ nouserfound: 'No user found' }));
+});
+
+
 router.post("/login", (req, res)=> {
     const { errors, isValid } = validateLoginInput(req.body);
 
@@ -81,7 +90,7 @@ router.post("/login", (req, res)=> {
                     return res.status(400).json({password: "Incorrect password"})
                 }
                 
-            })
+            });
     });
 })
 
