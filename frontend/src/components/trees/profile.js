@@ -5,20 +5,19 @@ import './profile.css';
 
 
 class Profile extends React.Component {
+
   constructor(props) {
     super(props);
-
-
   }
   
   componentDidMount(){
     this.props.fetchLeaves();
-    this.props.fetchUsers();
+    // this.props.fetchUsers();
 
-    let tree = {
-      userId: this.props.currentUser.id,
-      leaves: [],
-    };
+    // let tree = {
+    //   userId: this.props.currentUser.id,
+    //   leaves: [],
+    // };
     // this.props.makeTree(tree);
   }
 
@@ -26,9 +25,8 @@ class Profile extends React.Component {
       const { trees, currentUser } = this.props;
       console.log(this.props);
       
-   
       // if(trees.length === 0) return null;
-
+      debugger;
       return (
 
           <div>
