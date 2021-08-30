@@ -117,7 +117,7 @@ li > button {
 
 
 }
-li > button > .book-img {
+li > button > #book-img {
     max-width: 120px;
     max-height: 170px;
     border: none;
