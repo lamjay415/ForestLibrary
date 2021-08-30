@@ -32,6 +32,19 @@
   color: darkslategrey;
   border-radius: 5px;
 }
+.login-main-page{
+    text-decoration: none;
+    /* margin: 0 15px; */
+    padding: 3px 10px;
+    border: 1px solid lightgray;
+    font-size: medium;
+    color: darkslategrey;
+    border-radius: 5px;
+    /* margin-top: 200px; */
+    margin-top: 120px;
+    margin-left: 560px;
+    position: absolute;
+}
 
 .links-container > *:hover {
   cursor: pointer;
