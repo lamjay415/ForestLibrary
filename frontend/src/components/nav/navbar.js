@@ -41,7 +41,7 @@ class NavBar extends React.Component {
       // Play the song if it is paused
       this.state.audio.play();
       this.setState({
-        musicBgColor: "black"
+        musicBgColor: "orangered"
       })
     }
 
@@ -89,9 +89,8 @@ class NavBar extends React.Component {
             <div className='links-container'>
                 <div onClick={this.handleClick(`/users/${this.props.session.user.id}`).bind(this)}>My Tree</div>
                 <div onClick={this.handleClick('/').bind(this)}>Home</div>
-                <div>
-                  <img style={{
-                    }}id="music-icon" src="https://image.flaticon.com/icons/png/16/898/898792.png" onClick={this.playPause}/>
+                <div style={{borderColor: this.state.musicBgColor}}>
+                  <img id="music-icon" src="https://image.flaticon.com/icons/png/16/898/898792.png" onClick={this.playPause}/>
                 </div>
                 <div onClick={this.logoutUser}>Logout</div>
             </div>

@@ -19,7 +19,8 @@ html{
     height: 501px;
     position: relative;
     margin-left: 290px;
-    background-color: #7dc3ae;
+    background-color: #222726;
+    border: 10px solid #2f4f4f;
     flex-wrap: wrap;
     align-content: space-between;
 }
