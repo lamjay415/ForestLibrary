@@ -32,8 +32,8 @@ class AddLeaf extends React.Component {
         // console.log(document.getElementsByClassName("input")[1].value);
         document.getElementsByClassName("btn")[0].value = '';
         document.getElementsByClassName("btn")[1].value = '';
-        return <Redirect to="/" />
-        
+        return this.props.history.push(`/users/${this.props.session.user.id}/profile`);
+
 
     }
 
@@ -64,7 +64,7 @@ class AddLeaf extends React.Component {
                     <input className="btn-submit" type="submit" value="Submit" />
                 </form>
                 <br />
- 
+
             </div>
         )
     }
