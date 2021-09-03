@@ -8,7 +8,8 @@ const mSTP = state => ({
     session: state.session,
     leaves: state.entities.leaves,
     trees: Object.values(state.entities.trees),
-    dataIsShown: false
+    dataIsShown: false,
+    currentUser: state.session.user.username
 });
 
 const mDTP = dispatch => {
