@@ -54,12 +54,14 @@ class AddLeaf extends React.Component {
                         className="btn"
                         value={this.state.leaf.title}
                         onChange={this.update("title")}
+                        readOnly="readonly"
                     />
                     <br/>
                     <input type="text"
                         className="btn"
                         value={this.state.leaf.author[0]}
                         onChange={this.update("author")}
+                        readOnly="readonly"
                     />
                     <input className="btn-submit" type="submit" value="Submit" />
                 </form>
