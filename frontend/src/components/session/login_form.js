@@ -9,30 +9,19 @@ class LoginForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      // errors: {
-      //   username: "",
-      //   password: ""
-      // }
+      showError:false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // Once the user has been authenticated, redirect to the Tweets page
-//   componentWillReceiveProps(nextProps) {
-//     if (nextProps.currentUser === true) {
-//       this.props.history.push('/');
-//     }
 
-//     // Set or clear errors
-//     this.setState({errors: nextProps.errors})
-//   }
 
   // Handle field updates (called in the render method)
   update(field) {
     return e => this.setState({
-      [field]: e.currentTarget.value
+      [field]: e.currentTarget.value,
+      showError:false
     });
   }
 
@@ -40,19 +29,24 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    
+
     let user = {
       username: this.state.username,
       password: this.state.password
     };
-
-    this.props.login(user)
-    // .then(this.props.history.push('/'));
+    console.log(this.state.errors);
+    this.props.login(user);
+    this.setState({
+      showError:true
+    });
+    
   }
 
   // Render the session errors if there are any
   renderErrors() {
     return(
-      <ul>
+      <ul className="error">
         {Object.keys(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.props.errors[error]}
@@ -81,7 +75,7 @@ class LoginForm extends React.Component {
               />
             <br/>
             <input type="submit" value="Submit" className='form-button'/>
-            {this.renderErrors()}
+            {this.state.showError ? this.renderErrors() : null}
           </div>
         </form>
       </div>

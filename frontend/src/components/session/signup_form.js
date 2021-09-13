@@ -9,7 +9,7 @@ class SignupForm extends React.Component {
       username: '',
       password: '',
       password2: '',
-      // errors: {}
+      showError: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,8 +20,10 @@ class SignupForm extends React.Component {
 
   update(field) {
     return e => this.setState({
-      [field]: e.currentTarget.value
+      [field]: e.currentTarget.value,
+      showError : false,
     });
+  
   }
  
 
@@ -36,6 +38,7 @@ class SignupForm extends React.Component {
    
 
     this.props.signup(user, this.props.history);
+    this.setState({showError: true});
    
     }
   
@@ -44,7 +47,7 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="error">
         {Object.keys(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.props.errors[error]}
@@ -80,7 +83,7 @@ class SignupForm extends React.Component {
               />
             <br/>
             <input type="submit" value="Submit" className='form-button'/>
-            {this.renderErrors()}
+            {this.state.showError ? this.renderErrors() : null}
           </div>
         </form>
       </div>

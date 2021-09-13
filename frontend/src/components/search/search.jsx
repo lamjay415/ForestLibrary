@@ -106,7 +106,7 @@ class Search extends React.Component {
                                 const bookTitle = e.target.alt;
                                 this.setState({
                                         
-                                        detailComponent:(<div><AddLeaf setDetailComponent={()=>{this.setDetailComponent()}} bookTitle={bookTitle} bookAuthor={book.volumeInfo.authors.length <= 0 ? ["No Author"] :book.volumeInfo.authors }/></div>),
+                                        detailComponent:(<div><AddLeaf setDetailComponent={()=>{this.setDetailComponent()}} bookTitle={bookTitle} bookAuthor={!book.volumeInfo.authors.length ? ["No Author"] :book.volumeInfo.authors }/></div>),
                                         submitted:true
                                     })
                                 }}>
