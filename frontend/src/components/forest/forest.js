@@ -94,8 +94,8 @@ Upload your first leaf and begin your journey. ForestLibrary gives you space to 
                 </div>
             </div>
             <div className="bottom-ad">
-                <span className="bottom-ad" id="bottom-ad-title">Thanks for checking out the trees. Now join in.</span>
-                <span id="bottom-ad-desc">Save books, add reviews and build your tree. All for free.</span>
+                <div id="bottom-ad-title">Thanks for checking out the trees. Now join in.</div>
+                <div id="bottom-ad-desc">Save books, add reviews and build your tree. All for free.</div>
                  <Link
                         to="/register"
                         className="create-tree-btn"
