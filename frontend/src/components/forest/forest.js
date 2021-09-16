@@ -72,6 +72,16 @@ export class Forest extends React.Component {
                 <div className="advertisement">
                     <span id="main-advertisement">What's next in reading is first on ForestLibrary</span>
 Upload your first leaf and begin your journey. ForestLibrary gives you space to create, find your book club, and connect with other readers.</div>
+            <div className="bottom-ad">
+                <div id="bottom-ad-title">Thanks for checking out the trees. Now join in.</div>
+                <div id="bottom-ad-desc">Save books, add reviews and build your tree. All for free.</div>
+                 <Link
+                        to="/register"
+                        className="create-tree-btn"
+                        id="upload-your-own-button"
+                    >
+                        Create a Tree</Link>
+            </div>
              <div className="outer-forest">
                 <div className="forest">
                     {trees.map((tree, idx) => (
@@ -90,17 +100,6 @@ Upload your first leaf and begin your journey. ForestLibrary gives you space to 
                     ))}
                 </div>
             </div>
-            <div className="bottom-ad">
-                <div id="bottom-ad-title">Thanks for checking out the trees. Now join in.</div>
-                <div id="bottom-ad-desc">Save books, add reviews and build your tree. All for free.</div>
-                 <Link
-                        to="/register"
-                        className="create-tree-btn"
-                        id="upload-your-own-button"
-                    >
-                        Create a Tree</Link>
-            </div>
-
         </div>
             )
         }
