@@ -72,34 +72,34 @@ export class Forest extends React.Component {
                 <div className="advertisement">
                     <span id="main-advertisement">What's next in reading is first on ForestLibrary</span>
 Upload your first leaf and begin your journey. ForestLibrary gives you space to create, document, and connect with other readers.</div>
-             <div className="outer-forest">
-                <div className="forest">
-                    {trees.map((tree, idx) => (
-                        <div className="tree" key={idx}> 
+                    <div className="outer-forest">
+                    <div className="forest">
+                        {trees.map((tree, idx) => (
+                            <div className="tree" key={idx}> 
 
-                    <Link className="links"
-                        to={`/users/${tree._id}`} >
-                            <img className="tree-images"
-                            src="https://image.flaticon.com/icons/png/64/4319/4319580.png" 
-                            onMouseEnter={() => this.setState({dataIsShown: true})}
-                            onMouseLeave={() => this.setState({dataIsShown: false})}
-                            /> 
-                        </Link> 
-                            <span className="tree-username">{tree.username}</span>
-                        </div>
-                    ))}
+                                <Link className="links"
+                                    to={`/users/${tree._id}`} >
+                                        <img className="tree-images"
+                                        src="https://image.flaticon.com/icons/png/64/4319/4319580.png" 
+                                        onMouseEnter={() => this.setState({dataIsShown: true})}
+                                        onMouseLeave={() => this.setState({dataIsShown: false})}
+                                        /> 
+                                    </Link> 
+                                        <span className="tree-username">{tree.username}</span>
+                                    </div>
+                                ))}
+                            </div>
+                    </div>
+                    <div className="bottom-section">
+                        <span className="bottom-ad-title">Thanks for checking out the trees. Now join in.</span>
+                        <span className="bottom-ad-desc">Save books, add reviews and build your tree. All for free.</span>
+                        <Link to="/register"
+                            className="create-tree-btn"
+                            id="upload-your-own-button"
+                        >Create a Tree</Link>
+                    </div>
+
                 </div>
-            </div>
-            <div className="bottom-ad">
-                <div className="bottom-ad-title">Thanks for checking out the trees. Now join in.</div>
-                <div className="bottom-ad-desc">Save books, add reviews and build your tree. All for free.</div>
-                <Link to="/register"
-                    className="create-tree-btn"
-                    id="upload-your-own-button"
-                >Create a Tree</Link>
-            </div>
-
-        </div>
             )
         }
     }
