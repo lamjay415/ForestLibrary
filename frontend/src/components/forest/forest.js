@@ -11,9 +11,6 @@ export class Forest extends React.Component {
         this.state= {
             dataIsShown: false,
             reload: false,
-            currentUser: this.props.session.user.username
-
-
         }
         
     }
@@ -47,8 +44,8 @@ export class Forest extends React.Component {
         const trees = (this.props.trees);
     if(loggedIn) {
         return(
-        <div class='main-page'>
-            <div className="welcome-user">Welcome home {this.state.currentUser}</div>
+        <div className='main-page'>
+            <div className="welcome-user">Welcome home {this.props.session.user.username}</div>
             <div className="outer-forest">
                 <div className="forest">
                     {trees.map((tree, idx) => (
