@@ -18,6 +18,24 @@
 
 }
 
+
+#root > div > div:nth-child(2) > div > div > div:nth-child(2) > div > form > div > input[type=text]:nth-child(3){
+    height: 30px;
+    background-color: darkgray;
+}
+
+#root > div > div:nth-child(2) > div > div > div:nth-child(2) > div > form > div > input[type=text]:nth-child(3):hover{
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+
+}
+
+#root > div > div:nth-child(2) > div > div > div:nth-child(1) > li:nth-child(1) > div > h3{
+    display: none;
+}
+
+#root > div > div:nth-child(2) > div > div > div:nth-child(1) > li:nth-child(2) > div{
+    display: none;
+}
 /* #btn-submit{
     height: 30px;
 } */
@@ -108,6 +126,14 @@
     border-radius: 5px;
 }
 
+.book-list > li:hover{
+    cursor: pointer;
+}
+
+#book-img:hover{
+    cursor:pointer;
+}
+
 li > button {
     max-width: 120px;
     max-height: 170px;
@@ -126,19 +152,5 @@ li > button > #book-img {
 
 }
 
-#root > div > div:nth-child(2) > div > div > div:nth-child(2) > div > form > div > input[type=text]:nth-child(3){
-    height: 30px;
-    background-color: darkgray;
-}
-#root > div > div:nth-child(2) > div > div > div:nth-child(2) > div > form > div > input[type=text]:nth-child(3):hover{
-    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
-
-}
-#root > div > div:nth-child(2) > div > div > div:nth-child(1) > li:nth-child(1) > div > h3{
-    display: none;
-}
-#root > div > div:nth-child(2) > div > div > div:nth-child(1) > li:nth-child(2) > div{
-    display: none;
-}
 
 

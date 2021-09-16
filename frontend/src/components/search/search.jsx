@@ -46,10 +46,6 @@ class Search extends React.Component {
            
         }
         
-       
-      
-
-
     }
     handleChange(e) {
         this.setState({ book: e.target.value, apiKey: "AIzaSyB8uY1e1Cxe0tLz_rRJtjqjOGZb3Sw2ITA" , result: []});
@@ -101,15 +97,17 @@ class Search extends React.Component {
                 <div className="search-results">
                     <ul className="book-list">
                     {this.state.result.map((book, i) => (
-                        <li key={i}>
-                            <button onClick={(e) => {
-                                const bookTitle = e.target.alt;
-                                this.setState({
-                                        
-                                        detailComponent:(<div><AddLeaf setDetailComponent={()=>{this.setDetailComponent()}} bookTitle={bookTitle} bookAuthor={!book.volumeInfo.authors.length ? ["No Author"] :book.volumeInfo.authors }/></div>),
-                                        submitted:true
-                                    })
-                                }}>
+                        <li key={i} class-name='book-list-item'
+                            onClick={(e) => {
+                            const bookTitle = e.target.alt;
+                            this.setState({
+                                    
+                                    detailComponent:(<div><AddLeaf setDetailComponent={()=>{this.setDetailComponent()}} bookTitle={bookTitle} bookAuthor={!book.volumeInfo.authors.length ? ["No Author"] :book.volumeInfo.authors }/></div>),
+                                    submitted:true
+                                })
+                            }}
+                        >
+                            <button >
                                 
                                 {book.volumeInfo.imageLinks!=null ?
                                     <img id="book-img" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />

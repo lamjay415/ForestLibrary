@@ -130,4 +130,5 @@ table {
 .app-containers {
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 }

@@ -2,6 +2,7 @@
 import React from 'react';
 import { editLeaf } from '../../actions/leaf_actions';
 import { connect } from 'react-redux';
+import './mytree.css';
 
 class MyTree extends React.Component{
 

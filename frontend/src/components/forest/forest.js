@@ -23,8 +23,7 @@ export class Forest extends React.Component {
     // }
 
     componentDidMount() {
-        this.props.fetchTrees();
-        this.props.fetchUsers();
+        this.props.fetchTrees().then(this.props.fetchUsers());
         // this.getUsers();
 
     //     window.onload = function() {
@@ -33,7 +32,7 @@ export class Forest extends React.Component {
     //         window.location.reload();
     //     }
     // }
-    this.refreshPage()
+        this.refreshPage()
     }
 
     refreshPage = () => {
@@ -48,8 +47,8 @@ export class Forest extends React.Component {
         const trees = (this.props.trees);
     if(loggedIn) {
         return(
-        <div>
-            <span className="welcome-user">Welcome home {this.state.currentUser}</span>
+        <div class='main-page'>
+            <div className="welcome-user">Welcome home {this.state.currentUser}</div>
             <div className="outer-forest">
                 <div className="forest">
                     {trees.map((tree, idx) => (
@@ -104,12 +103,12 @@ Upload your first leaf and begin your journey. ForestLibrary gives you space to 
                     >
                         Create a Tree</Link>
             </div>
-             <Link
+             {/* <Link
                         to="/login"
                         className="login-main-page"
                         id="upload-your-own-button"
                     >
-                        Log in</Link>
+                        Log in</Link> */}
         </div>
             )
         }

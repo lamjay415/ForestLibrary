@@ -29,10 +29,9 @@
 }
 
 #icon-close{
-    display: flex;
-    margin-left: 600px;
-    margin-top: -10px;
-    padding: 15x;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 }
 #icon-close:hover{
     cursor: pointer;
