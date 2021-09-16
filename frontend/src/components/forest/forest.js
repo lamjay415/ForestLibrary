@@ -103,12 +103,7 @@ Upload your first leaf and begin your journey. ForestLibrary gives you space to 
                     >
                         Create a Tree</Link>
             </div>
-             {/* <Link
-                        to="/login"
-                        className="login-main-page"
-                        id="upload-your-own-button"
-                    >
-                        Log in</Link> */}
+
         </div>
             )
         }
