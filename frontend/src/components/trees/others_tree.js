@@ -29,7 +29,7 @@ class OthersTree extends React.Component {
       return (
           <div>
             <div className='profile-page-container'>
-              {currentUser.id === this.props.treeId ? <div className='profile-page-left'>
+              {(currentUser && currentUser.id === this.props.treeId) ? <div className='profile-page-left'>
                 <p className="search-placeholder">
                   Search your book here! Example: The Little Prince
                 </p>
