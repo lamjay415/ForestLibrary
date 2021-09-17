@@ -7,6 +7,7 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.user,
+    treeId: ownProps.match.params.user_id,
     trees: Object.values(state.entities.trees),
     leaves: Object.values(state.entities.leaves).filter(leaf => {
       if(leaf.userId===ownProps.match.params.user_id) {

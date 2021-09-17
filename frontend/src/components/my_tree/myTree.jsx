@@ -58,7 +58,7 @@ class MyTree extends React.Component{
                 <div>Title: {curLeaf.title}</div>
                 <div>Date added: {curLeaf.date.slice(0,10)}</div>
                 {curLeaf.review !== '' && curLeaf.review !== undefined ? <div>Review: {curLeaf.review}</div> : <div></div>}
-                {this.props.currentUser.id===curLeaf.userId ? review_div : <div></div>}
+                {(this.props.currentUser && this.props.currentUser.id===curLeaf.userId) ? review_div : <div></div>}
             </div>
         )
     }
