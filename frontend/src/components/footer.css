@@ -1,0 +1,31 @@
+.footer-container{
+    font-weight: bold;
+    padding: 10px;
+    border-top: 1px solid darkslategray;
+    background-color:darkslategrey;
+    color:whitesmoke;
+}
+
+.members-container{
+    display:flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.member-info{
+    display: flex;
+}
+
+.member-info > div{
+    margin-left: 10px;
+}
+
+.quick-link{
+    padding: 10px 0;
+    margin-left: 10px;
+}
+
+.quick-link:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

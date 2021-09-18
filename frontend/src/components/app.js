@@ -10,6 +10,7 @@ import ForestContainer from './forest/forest_container';
 import ProfileContainer from './trees/profile_container';
 import OthersTreeContainer from './trees/others_tree_container';
 import Search from './search/search';
+import Footer from './Footer';
 
 import './app.css';
 
@@ -29,6 +30,7 @@ const App = () => (
         <div>
             <ProtectedRoute exact path="/search" component={Search} />
         </div>
+        <Footer/>
     </div>
 );
 
