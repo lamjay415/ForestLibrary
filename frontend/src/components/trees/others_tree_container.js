@@ -19,9 +19,10 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch,ownProps) => ({
     fetchLeaves: () => dispatch(fetchLeaves()),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    // fetchUser: () => dispatch(fetchUser(ownProps.match.params.user_id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OthersTree));

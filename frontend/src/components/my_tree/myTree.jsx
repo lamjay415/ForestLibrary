@@ -39,11 +39,11 @@ class MyTree extends React.Component{
             <div>
                 <form onSubmit={handleSubmit} className='leaf-review-form'>
                     <textarea
-                    placeholder='write review here!'
+                    placeholder='share your thoughts here!'
                     onChange={updateReview}
                     id='review-text-area'
                     />
-                    <input type='submit' value='add Review'
+                    <input type='submit' value='add a comment'
                     />
                 </form>
             </div>
@@ -57,7 +57,7 @@ class MyTree extends React.Component{
             <div className='tree-leaf-info'>
                 <div>Title: {curLeaf.title}</div>
                 <div>Date added: {curLeaf.date.slice(0,10)}</div>
-                {curLeaf.review !== '' && curLeaf.review !== undefined ? <div>Review: {curLeaf.review}</div> : <div></div>}
+                {curLeaf.review !== '' && curLeaf.review !== undefined ? <div>Comment: {curLeaf.review}</div> : <div></div>}
                 {(this.props.currentUser && this.props.currentUser.id===curLeaf.userId) ? review_div : <div></div>}
             </div>
         )

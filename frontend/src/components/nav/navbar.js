@@ -81,7 +81,11 @@ class NavBar extends React.Component {
   handleClick(route){
     return (e) => this.props.history.push(route);
   }
-
+  
+  demoLogin(e){
+    e.preventDefault();
+    this.props.login({username:'demo',password:'123456'}).then(this.props.history.push('/users/6148f9737c929f02f3991ffe'));
+  }
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
       if (this.props.loggedIn) {
@@ -99,6 +103,7 @@ class NavBar extends React.Component {
       } else {
         return (
             <div className='links-container'>
+                <div onClick={this.demoLogin.bind(this)}>Demo</div>
                 <div onClick={this.handleClick('/register').bind(this)}>Signup</div>
                 <div onClick={this.handleClick('/login').bind(this)}>Login</div>
             </div>

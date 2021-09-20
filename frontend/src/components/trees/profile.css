@@ -7,7 +7,7 @@
     background-color: #edf4e0;
     border: solid 5px #5d7676;
     border-radius: 15px;
-    margin-top: 40px;
+    margin-top: 75px;
     flex-direction: row;
 }
 
@@ -116,6 +116,7 @@
 
 .tree-leaf-info > * {
   padding: 10px 0;
+  color:whitesmoke;
 }
 
 .create-tree-btn{

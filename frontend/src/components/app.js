@@ -30,7 +30,6 @@ const App = () => (
         <div>
             <ProtectedRoute exact path="/search" component={Search} />
         </div>
-        <Footer/>
     </div>
 );
 

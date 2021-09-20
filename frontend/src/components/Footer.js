@@ -2,7 +2,7 @@ import './footer.css';
 
 const Footer = () => (
     <div className='footer-container'>
-        <div>Meet the team</div>
+        <div className='footer-title'>Meet the team</div>
         <div className='members-container'>
             <div className='member-info'>
                 <img src='https://ca.slack-edge.com/T03GU501J-U01QQ6RL6G1-5e6de7fae34e-512' width='100'/>

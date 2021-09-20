@@ -25,10 +25,10 @@ class OthersTree extends React.Component {
       const { trees, currentUser } = this.props;
       
       // if(trees.length === 0) return null;
-      debugger;
       return (
           <div>
             <div className='profile-page-container'>
+              
               {(currentUser && currentUser.id === this.props.treeId) ? <div className='profile-page-left'>
                 <p className="search-placeholder">
                   Search your book here! Example: The Little Prince

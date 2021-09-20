@@ -42,13 +42,17 @@
     margin-top: 130px
 }
 .add-leaf-div {
+    color: darkslategray;
+    padding: 10px;
     width: 100%;
     box-sizing: border-box;
     height: 200px;
     padding-left: 20%;
     padding-right: 20%;
+}
 
-
+.add-leaf-div > h2{
+    padding:10px;
 }
 .add-leaf-div > .form-add-leaf {
      width: 100%;
@@ -67,6 +71,7 @@
     height: 200px;
     padding-left: 30%;
     padding-top: 50px;
+    background-color: rgb(222,241,248);
 }
 .search-div > .form-search{
    
@@ -89,12 +94,16 @@
 }
 .btn-submit {
     height: 35px;
-    width: 8%;
     border-radius: 8px;
     border: 0.5px solid rgb(167, 165, 165);
 
 
 }
+
+.btn-submit:hover{
+    cursor:pointer;
+}
+
 .search-result {
     width: 100%;
     box-sizing: border-box;
@@ -108,9 +117,10 @@
     padding-right: 50px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 .book-list > li {
-    margin-right: 20px;
+    /* margin-right: 20px; */
     margin-bottom: 20px;
     width: 150px;
     height: 200px;
@@ -136,12 +146,18 @@ li > button {
 
 }
 li > button > #book-img {
-    max-width: 120px;
-    max-height: 170px;
+    width: 145px;
+    height: 195px;
     border: none;
-    margin: 3px;
-    align-content: center;
+    object-fit: fill;
+    /* margin: 3px; */
+    /* align-content: center; */
+    
+}
 
+.search-background{
+    position: absolute;
+    width:100%;
 }
 
 
