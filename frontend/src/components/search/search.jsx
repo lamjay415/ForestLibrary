@@ -74,7 +74,7 @@ class Search extends React.Component {
                         />
                     <input className="btn-submit" type="submit" value='search' />
                 </form>
-                <img src='https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1126130554%2F13-books-to-help-your-job-search%2F960x0.jpg%3FcropX1%3D0%26cropX2%3D5472%26cropY1%3D547%26cropY2%3D3625'/>
+                {/* <img src='https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1126130554%2F13-books-to-help-your-job-search%2F960x0.jpg%3FcropX1%3D0%26cropX2%3D5472%26cropY1%3D547%26cropY2%3D3625'/> */}
             </div>
         ) } else {
             return (
@@ -89,8 +89,7 @@ class Search extends React.Component {
                         />
                             <input className="btn-submit" type="submit" value='Search' />
                     </form>
-            </div>
-
+                </div>
 
                 {this.state.detailComponent}
 
@@ -123,10 +122,10 @@ class Search extends React.Component {
                     </ul>
                 </div>
                     : null}
-                <img className='search-background'src='https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1126130554%2F13-books-to-help-your-job-search%2F960x0.jpg%3FcropX1%3D0%26cropX2%3D5472%26cropY1%3D547%26cropY2%3D3625'/>
+                {this.state.result.length === 0 ? <img className='search-background'src='https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1126130554%2F13-books-to-help-your-job-search%2F960x0.jpg%3FcropX1%3D0%26cropX2%3D5472%26cropY1%3D547%26cropY2%3D3625'/> : null}
             </div>
             )
-    }
+        }
     }
 }
 export default Search;
