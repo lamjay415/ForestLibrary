@@ -7,8 +7,6 @@ import './profile.css';
 class OthersTree extends React.Component {
   constructor(props) {
     super(props);
-
-
   }
   
   componentDidMount(){
@@ -20,10 +18,8 @@ class OthersTree extends React.Component {
     // };
     // this.props.makeTree(tree);
   }
-
     render() {
-      const { trees, currentUser } = this.props;
-      
+      const { trees, currentUser, currentTree } = this.props;
       // if(trees.length === 0) return null;
       return (
           <div>
@@ -35,6 +31,9 @@ class OthersTree extends React.Component {
                 </p>
               <Link to="/search">Add A Leaf</Link>
               </div> : null}
+              {currentTree[0] ? 
+                <div> Welcome to {currentTree[0].username}'s tree</div>
+                : null}
               <div className='profile-page-other'>
                 <div className='profile-page-mid-right'>
                  <MyTree leaves={this.props.leaves} currentUser={this.props.currentUser}/>

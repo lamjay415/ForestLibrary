@@ -31,7 +31,7 @@ class MyTree extends React.Component{
             this.props.editLeaf(curLeaf);
             let review = document.getElementById('review-text-area');
             review.value = "";
-            alert("Review has been added!");
+            // alert("Review has been added!");
         }
 
         // const {leaf} = this.props;
@@ -43,8 +43,9 @@ class MyTree extends React.Component{
                     onChange={updateReview}
                     id='review-text-area'
                     />
-                    <input type='submit' value='add a comment'
-                    />
+                    {curLeaf.review ? 
+                        <input type='submit' value='Update Comment'/>:<input type='submit' value='Add a Comment'/>
+                    }
                 </form>
             </div>
         )
@@ -81,7 +82,7 @@ class MyTree extends React.Component{
                     />
             )
         });
-        
+        const {username} = this.props;
         return(
             <div className='profile-page-tree'>
                 <div className='tree-container'>
