@@ -10,8 +10,8 @@ export class Forest extends React.Component {
 
         this.state= {
             dataIsShown: false,
-            reload: false,
-            currentUser: this.props.session.user.username
+            // reload: false,
+            // currentUser: this.props.session.user.username
 
 
         }
@@ -33,15 +33,15 @@ export class Forest extends React.Component {
     //         window.location.reload();
     //     }
     // }
-    this.refreshPage()
+    // this.refreshPage()
     }
 
-    refreshPage = () => {
-        this.setState(
-            {reload: true},
-            () => this.setState({reload: false})
-        )
-    }
+    // refreshPage = () => {
+    //     this.setState(
+    //         {reload: true},
+    //         () => this.setState({reload: false})
+    //     )
+    // }
 
     existingForest = () => {
         const { loggedIn} = this.props;
@@ -49,7 +49,7 @@ export class Forest extends React.Component {
     if(loggedIn) {
         return(
         <div>
-            <span className="welcome-user">Welcome home {this.state.currentUser}</span>
+                <span className="welcome-user">Welcome home {this.props.session.user.username}</span>
             <div className="outer-forest">
                 <div className="forest">
                     {trees.map((tree, idx) => (
