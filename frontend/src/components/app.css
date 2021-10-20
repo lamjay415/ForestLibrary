@@ -128,5 +128,8 @@ table {
   border-spacing: 0;
 }
 .app-containers {
+  background-color: rgb(222,241,248);
   display: flex;
+  justify-content: center;
+  overflow-x: hidden;
 }

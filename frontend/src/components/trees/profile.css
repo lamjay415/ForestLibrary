@@ -1,14 +1,13 @@
 
 .profile-page-container {
     display: flex;
-    width: 1170px;
+    width: 95vw;
     position: relative;
-    margin-left: 40px;
     height: 570px;
     background-color: #edf4e0;
     border: solid 5px #5d7676;
     border-radius: 15px;
-    margin-top: 40px;
+    margin-top: 75px;
     flex-direction: row;
 }
 
@@ -102,7 +101,7 @@
     font-size: small;
     padding: 10px 0;
     position: absolute;
-    top: 40%;
+    top: 25%;
     left: 70%;
     width: 150px;
     /* right: 15%; */
@@ -117,6 +116,7 @@
 
 .tree-leaf-info > * {
   padding: 10px 0;
+  color:whitesmoke;
 }
 
 .create-tree-btn{
@@ -125,13 +125,15 @@
     /* height: auto; */
     background-color: lightseagreen;
     /* display: flex; */
-    position: absolute;
-    margin-left: -380px;
+    /* position: absolute; */
+    /* margin-left: -380px; */
     width: 130px;
     height: 28px;
-    margin-top: -70px;
-    padding-left: 30px;
+    margin-top: 25px;
+    /* margin-top: -70px; */
+    /* padding-left: 30px; */
     padding-top: 10px;
+    margin-bottom: 72px;
 }
 
 .create-tree-btn:hover{

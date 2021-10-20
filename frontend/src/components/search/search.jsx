@@ -46,10 +46,6 @@ class Search extends React.Component {
            
         }
         
-       
-      
-
-
     }
     handleChange(e) {
         this.setState({ book: e.target.value, apiKey: "AIzaSyB8uY1e1Cxe0tLz_rRJtjqjOGZb3Sw2ITA" , result: []});
@@ -78,6 +74,7 @@ class Search extends React.Component {
                         />
                     <input className="btn-submit" type="submit" value='search' />
                 </form>
+                {/* <img src='https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1126130554%2F13-books-to-help-your-job-search%2F960x0.jpg%3FcropX1%3D0%26cropX2%3D5472%26cropY1%3D547%26cropY2%3D3625'/> */}
             </div>
         ) } else {
             return (
@@ -92,8 +89,7 @@ class Search extends React.Component {
                         />
                             <input className="btn-submit" type="submit" value='Search' />
                     </form>
-            </div>
-
+                </div>
 
                 {this.state.detailComponent}
 
@@ -101,15 +97,17 @@ class Search extends React.Component {
                 <div className="search-results">
                     <ul className="book-list">
                     {this.state.result.map((book, i) => (
-                        <li key={i}>
-                            <button onClick={(e) => {
-                                const bookTitle = e.target.alt;
-                                this.setState({
-                                        
-                                        detailComponent:(<div><AddLeaf setDetailComponent={()=>{this.setDetailComponent()}} bookTitle={bookTitle} bookAuthor={!book.volumeInfo.authors.length ? ["No Author"] :book.volumeInfo.authors }/></div>),
-                                        submitted:true
-                                    })
-                                }}>
+                        <li key={i} class-name='book-list-item'
+                            onClick={(e) => {
+                            const bookTitle = e.target.alt;
+                            this.setState({
+                                    
+                                    detailComponent:(<div><AddLeaf setDetailComponent={()=>{this.setDetailComponent()}} bookTitle={bookTitle} bookAuthor={!book.volumeInfo.authors.length ? ["No Author"] :book.volumeInfo.authors }/></div>),
+                                    submitted:true
+                                })
+                            }}
+                        >
+                            <button >
                                 
                                 {book.volumeInfo.imageLinks!=null ?
                                     <img id="book-img" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
@@ -124,10 +122,10 @@ class Search extends React.Component {
                     </ul>
                 </div>
                     : null}
+                {this.state.result.length === 0 ? <img className='search-background'src='https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1126130554%2F13-books-to-help-your-job-search%2F960x0.jpg%3FcropX1%3D0%26cropX2%3D5472%26cropY1%3D547%26cropY2%3D3625'/> : null}
             </div>
-
             )
-    }
+        }
     }
 }
 export default Search;
