@@ -18,4 +18,8 @@ export const addALeaf = leaf => {
 
 export const updateLeaf = leaf => {
     return axios.patch(`/api/leaves/${leaf._id}`, leaf);
-}
+};
+
+export const deleteLeaf = leaf => {
+    return axios.delete(`/api/leaves/${leaf._id}`)
+};

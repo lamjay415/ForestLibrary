@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React from 'react';
-import { editLeaf } from '../../actions/leaf_actions';
+import { editLeaf, deleteALeaf, fetchLeaves } from '../../actions/leaf_actions';
+import { fetchUsers } from '../../actions/tree_actions';
 import { connect } from 'react-redux';
 import './mytree.css';
 
@@ -64,6 +65,14 @@ class MyTree extends React.Component{
         )
     }
 
+    handleClose(leaf){
+        return e => {
+            e.preventDefault();
+            this.props.deleteALeaf(leaf);
+            this.props.fetchLeaves().then(this.props.fetchUsers());
+        }
+    }
+
     render(){
         
         // let leaf_display = this.state.curLeaf !== '' ? <Leaf leaf={this.state.curLeaf} currentUser={this.props.currentUser}/> : null;
@@ -73,13 +82,17 @@ class MyTree extends React.Component{
 
         let leaves_div = this.props.leaves.map((leaf,idx)=>{
             return(
-                    <img className='tree-leaf' 
-                    src='https://image.flaticon.com/icons/png/512/2049/2049733.png' 
-                    height='40'
-                    width='40'
-                    onClick={this.handleClick(leaf)}
-                    key={idx}
-                    />
+                    <div key={idx}>
+                        <img className='tree-leaf' 
+                        src='https://image.flaticon.com/icons/png/512/2049/2049733.png' 
+                        height='40'
+                        width='40'
+                        onClick={this.handleClick(leaf)}
+                        />
+                        {(this.props.currentUser && this.props.currentUser.id===leaf.userId) ? <img onClick={this.handleClose(leaf)}
+                        src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flat_cross_icon.svg/512px-Flat_cross_icon.svg.png'
+                        height='15'/> : null}
+                    </div>
             )
         });
         const {username} = this.props;
@@ -98,8 +111,21 @@ class MyTree extends React.Component{
     }
 }
 
+const mSTP = (state,ownProps) => {
+    return {
+        leaves: Object.values(state.entities.leaves).filter(leaf => {
+            if(leaf.userId===ownProps.match.params.user_id) {
+                return leaf;
+            }
+        })
+    }
+};
+
 const mDTP = dispatch => ({
-    editLeaf: leaf => dispatch(editLeaf(leaf)) 
-})
+    editLeaf: leaf => dispatch(editLeaf(leaf)),
+    deleteALeaf: leaf => dispatch(deleteALeaf(leaf)),
+    fetchLeaves: () => dispatch(fetchLeaves()),
+    fetchUsers: () => dispatch(fetchUsers())
+});
 
 export default connect(null,mDTP)(MyTree);
