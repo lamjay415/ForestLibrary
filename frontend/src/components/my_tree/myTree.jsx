@@ -4,6 +4,7 @@ import { editLeaf, deleteALeaf, fetchLeaves } from '../../actions/leaf_actions';
 import { fetchUsers } from '../../actions/tree_actions';
 import { connect } from 'react-redux';
 import './mytree.css';
+import { utcMilliseconds } from 'd3-time';
 
 class MyTree extends React.Component{
 
@@ -21,7 +22,9 @@ class MyTree extends React.Component{
         }
     }
 
-    renderLeaf(curLeaf){
+    renderLeaf(){
+
+        let curLeaf = this.state.curLeaf
 
         const updateReview = (e) =>{
             curLeaf.review = e.currentTarget.value
@@ -35,50 +38,48 @@ class MyTree extends React.Component{
             // alert("Review has been added!");
         }
 
-        // const {leaf} = this.props;
         const review_div = (
-            <div>
-                <form onSubmit={handleSubmit} className='leaf-review-form'>
-                    <textarea
-                    placeholder='share your thoughts here!'
-                    onChange={updateReview}
-                    id='review-text-area'
-                    />
-                    {curLeaf.review ? 
-                        <input type='submit' value='Update Comment'/>:<input type='submit' value='Add a Comment'/>
-                    }
-                </form>
-            </div>
-        )
+                <div>
+                    <form onSubmit={handleSubmit} className='leaf-review-form'>
+                        <textarea
+                        placeholder='share your thoughts here!'
+                        onChange={updateReview}
+                        id='review-text-area'
+                        />
+                        {curLeaf.review ? 
+                            <input type='submit' value='Update Comment'/>:<input type='submit' value='Add a Comment'/>
+                        }
+                    </form>
+                </div>
+            )
 
-        if(curLeaf === undefined){
-            return null;
-        }
-
-        return(
+        if(curLeaf) {
+            return(
             <div className='tree-leaf-info'>
                 <div>Title: {curLeaf.title}</div>
                 <div>Date added: {curLeaf.date.slice(0,10)}</div>
                 {curLeaf.review !== '' && curLeaf.review !== undefined ? <div>Comment: {curLeaf.review}</div> : <div></div>}
                 {(this.props.currentUser && this.props.currentUser.id===curLeaf.userId) ? review_div : <div></div>}
             </div>
-        )
+        )}else{
+            return null;
+        }
     }
 
     handleClose(leaf){
         return e => {
             e.preventDefault();
-            this.props.deleteALeaf(leaf);
-            this.props.fetchLeaves().then(this.props.fetchUsers());
+            this.props.deleteALeaf(leaf).then(this.props.fetchLeaves());
+            this.setState({curLeaf: null});
         }
     }
 
     render(){
         
         // let leaf_display = this.state.curLeaf !== '' ? <Leaf leaf={this.state.curLeaf} currentUser={this.props.currentUser}/> : null;
-
-        let leaf_display = this.state.curLeaf !== '' ? 
-            this.renderLeaf(this.state.curLeaf) : null;
+        console.log(this.props);
+        let leaf_display = this.state.curLeaf !== null ? 
+            this.renderLeaf() : null;
 
         let leaves_div = this.props.leaves.map((leaf,idx)=>{
             return(
@@ -114,7 +115,7 @@ class MyTree extends React.Component{
 const mSTP = (state,ownProps) => {
     return {
         leaves: Object.values(state.entities.leaves).filter(leaf => {
-            if(leaf.userId===ownProps.match.params.user_id) {
+            if(leaf.userId===ownProps.currentUser.id) {
                 return leaf;
             }
         })
@@ -128,4 +129,4 @@ const mDTP = dispatch => ({
     fetchUsers: () => dispatch(fetchUsers())
 });
 
-export default connect(null,mDTP)(MyTree);
+export default connect(mSTP,mDTP)(MyTree);
