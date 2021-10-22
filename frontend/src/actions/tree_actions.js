@@ -38,8 +38,10 @@ export const fetchUsers = () => dispatch => (
     .catch(err => console.log(err))
 );
 
-
-
+export const getUser = (state,id) => {
+  let users = Object.values(state.entities.trees)
+  return users.filter(user => user._id === id)
+}
 // export const fetchTree = userId => dispatch => (
 //   getTree(userId)
 //     .then(tree => dispatch(receiveUserTree(tree)))

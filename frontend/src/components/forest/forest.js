@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Footer from '../Footer';
 import "./forest.css";
 
 export class Forest extends React.Component {
@@ -32,12 +32,12 @@ export class Forest extends React.Component {
         this.refreshPage()
     }
 
-    refreshPage = () => {
-        this.setState(
-            {reload: true},
-            () => this.setState({reload: false})
-        )
-    }
+    // refreshPage = () => {
+    //     this.setState(
+    //         {reload: true},
+    //         () => this.setState({reload: false})
+    //     )
+    // }
 
     existingForest = () => {
         const { loggedIn} = this.props;
@@ -64,6 +64,7 @@ export class Forest extends React.Component {
                     ))}
                 </div>
             </div>
+            <Footer/>
         </div>
         )}
         else{
@@ -98,7 +99,7 @@ Upload your first leaf and begin your journey. ForestLibrary gives you space to 
                             id="upload-your-own-button"
                         >Create a Tree</Link>
                     </div>
-
+                            <Footer/>
                 </div>
             )
         }
