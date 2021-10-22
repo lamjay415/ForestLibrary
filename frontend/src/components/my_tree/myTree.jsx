@@ -82,7 +82,7 @@ class MyTree extends React.Component{
     render(){
         
         // let leaf_display = this.state.curLeaf !== '' ? <Leaf leaf={this.state.curLeaf} currentUser={this.props.currentUser}/> : null;
-        console.log(this.props);
+//         console.log(this.props);
         let leaf_display = this.state.curLeaf !== null ? 
             this.renderLeaf() : null;
 
