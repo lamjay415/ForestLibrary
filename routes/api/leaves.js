@@ -68,4 +68,15 @@ router.patch('/:id', (req, res) => {
     //     .then(leaf => res.json(leaf));
 });
 
+router.delete('/:id', (req, res) => {
+    Leaf.findByIdAndDelete(req.params.id, function (err, docs){
+        if(err){
+            console.log(err)
+        }else{
+            console.log("Deleted : ", docs);
+            res.json(docs);
+        }
+    })
+});
+
 module.exports = router;

@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch,ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
     fetchLeaves: () => dispatch(fetchLeaves()),
     fetchUsers: () => dispatch(fetchUsers()),
     // fetchUser: () => dispatch(fetchUser(ownProps.match.params.user_id))

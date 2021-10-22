@@ -102,7 +102,7 @@
     padding: 10px 0;
     position: absolute;
     top: 25%;
-    left: 70%;
+    left: 73%;
     width: 150px;
     /* right: 15%; */
     background-color: cadetblue;
@@ -146,4 +146,28 @@
     margin-top: 220px;
     height: 150px;
     width: 100px;
+}
+
+.other-page-left{
+  display:flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+  width: 35%;
+}
+
+.other-page-left>*{
+  width: 75%;
+  text-align: center;
+  font-size: x-large;
+  /* line-height: 20px; */
+}
+
+.other-page-title{
+  padding-bottom: 100px;
+}
+
+.other-page-sub{
+  padding-bottom: 25px;
+  line-height: 25px;
 }
