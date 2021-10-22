@@ -47,7 +47,7 @@ class MyTree extends React.Component{
                         id='review-text-area'
                         />
                         {curLeaf.review ? 
-                            <input type='submit' value='Update Comment'/>:<input type='submit' value='Add a Comment'/>
+                            <input className='review-form-btn' type='submit' value='Update Comment'/>:<input className='review-form-btn' type='submit' value='Add a Comment'/>
                         }
                     </form>
                 </div>
@@ -57,7 +57,7 @@ class MyTree extends React.Component{
             return(
             <div className='tree-leaf-info'>
                 <div>Title: {curLeaf.title}</div>
-                <div>Date added: {this.formatDate(curLeaf.date.slice(0,10))}</div>
+                <div>Date Added: {this.formatDate(curLeaf.date.slice(0,10))}</div>
                 {curLeaf.review !== '' && curLeaf.review !== undefined ? <div>Comment: {curLeaf.review}</div> : <div></div>}
                 {(this.props.currentUser && this.props.currentUser.id===curLeaf.userId) ? review_div : <div></div>}
             </div>

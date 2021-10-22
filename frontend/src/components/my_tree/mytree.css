@@ -28,3 +28,18 @@ font-family: cursive;
     transform: scale(1.1);
     cursor: pointer;
 }
+
+.review-form-btn{
+    /* border: ; */
+    background-color: burlywood;
+    color: darkslategray;
+    height: 25px;
+    border-radius: 15px;
+}
+
+.review-form-btn:hover{
+    cursor: pointer;
+    /* border: darkslategrey; */
+    /* transform: scale(1.02); */
+    transition: 0.5s;
+}
