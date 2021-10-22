@@ -6,8 +6,9 @@ const Modal = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
   return (
-    <div className={showHideClassName}>
-      <section className="modal-main">
+    <div className={showHideClassName} onClick={handleWindowClose}>
+      <section 
+        className="modal-main">
         {children}
         <Instructions />
         <img 

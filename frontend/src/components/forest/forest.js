@@ -29,7 +29,7 @@ export class Forest extends React.Component {
     //         window.location.reload();
     //     }
     // }
-        this.refreshPage()
+        // this.refreshPage()
     }
 
     // refreshPage = () => {
