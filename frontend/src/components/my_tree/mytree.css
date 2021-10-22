@@ -19,3 +19,12 @@ font-family: cursive;
     height:75px;
     margin-bottom: 15px;
 }
+
+.leaf-close-button{
+    position: absolute;
+}
+
+.leaf-close-button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}

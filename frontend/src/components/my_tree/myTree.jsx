@@ -23,8 +23,8 @@ class MyTree extends React.Component{
     }
 
     renderLeaf(){
-
         let curLeaf = this.state.curLeaf
+
 
         const updateReview = (e) =>{
             curLeaf.review = e.currentTarget.value
@@ -57,7 +57,7 @@ class MyTree extends React.Component{
             return(
             <div className='tree-leaf-info'>
                 <div>Title: {curLeaf.title}</div>
-                <div>Date added: {curLeaf.date.slice(0,10)}</div>
+                <div>Date added: {this.formatDate(curLeaf.date.slice(0,10))}</div>
                 {curLeaf.review !== '' && curLeaf.review !== undefined ? <div>Comment: {curLeaf.review}</div> : <div></div>}
                 {(this.props.currentUser && this.props.currentUser.id===curLeaf.userId) ? review_div : <div></div>}
             </div>
@@ -66,10 +66,15 @@ class MyTree extends React.Component{
         }
     }
 
+    formatDate(date){
+        let newDate = new Date(date);
+        return new Intl.DateTimeFormat('en-US', {month:'long'}).format(newDate).toString() + ' ' + newDate.getFullYear();
+    }
+
     handleClose(leaf){
         return e => {
             e.preventDefault();
-            this.props.deleteALeaf(leaf).then(this.props.fetchLeaves());
+            this.props.deleteALeaf(leaf);
             this.setState({curLeaf: null});
         }
     }
@@ -90,9 +95,14 @@ class MyTree extends React.Component{
                         width='40'
                         onClick={this.handleClick(leaf)}
                         />
-                        {(this.props.currentUser && this.props.currentUser.id===leaf.userId) ? <img onClick={this.handleClose(leaf)}
-                        src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flat_cross_icon.svg/512px-Flat_cross_icon.svg.png'
-                        height='15'/> : null}
+                        {(this.props.currentUser && this.props.currentUser.id===leaf.userId) ? 
+                            <img 
+                                onClick={this.handleClose(leaf)}
+                                src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flat_cross_icon.svg/512px-Flat_cross_icon.svg.png'
+                                height='15'
+                                className='leaf-close-button'
+                            /> 
+                            : null}
                     </div>
             )
         });
@@ -129,4 +139,4 @@ const mDTP = dispatch => ({
     fetchUsers: () => dispatch(fetchUsers())
 });
 
-export default connect(mSTP,mDTP)(MyTree);
+export default connect(null,mDTP)(MyTree);
