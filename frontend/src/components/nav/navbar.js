@@ -84,7 +84,7 @@ class NavBar extends React.Component {
   
   demoLogin(e){
     e.preventDefault();
-    this.props.login({username:'demo',password:'123456'}).then(this.props.history.push('/users/6148f9737c929f02f3991ffe'));
+    this.props.login({username:'demo',password:'123456'});//.then(this.props.history.push('/users/6148f9737c929f02f3991ffe'));
   }
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
