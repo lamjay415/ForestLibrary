@@ -19,7 +19,7 @@ const Footer = () => (
                 </div>
             </div>
             <div className='member-info'>
-                <img src='https://secure.gravatar.com/avatar/a1330a9ff5e261f502ea5f743554a3fc?secure=true&size=300' width='100'/>
+                <img src='https://avatars.githubusercontent.com/u/15056122?s=400&u=5d0c1a7232d4ec2caf66c32fb77dbb28227b4544&v=4' width='100'/>
                 <div>Jay
                     <div onClick={() => window.open('https://www.linkedin.com/in/jay-lam/','_blank')} className='quick-link'>LinkedIn</div>
                     <div onClick={() => window.open('https://github.com/lamjay415','_blank')} className='quick-link'>Github</div>

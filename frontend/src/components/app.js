@@ -19,13 +19,12 @@ const App = () => (
         <NavBarContainer/>
         <div className="app-containers">
             <div>
-                <AuthRoute exact path="/login" component={LoginFormContainer} />
-                <AuthRoute exact path="/register" component={SignupFormContainer} />
+                <Route exact path="/" component={ForestContainer} />
+                <Route exact path="/login" component={LoginFormContainer} />
+                <Route exact path="/register" component={SignupFormContainer} />
                 <Route exact path="/users/:user_id" component={OthersTreeContainer} />
                 <ProtectedRoute exact path="/users/:user_id/profile" component={ProfileContainer} />
-                <Route exact path="/" component={ForestContainer} />
             </div>
-           
         </div> 
         <div>
             <ProtectedRoute exact path="/search" component={Search} />
